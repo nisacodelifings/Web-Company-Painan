@@ -1,6 +1,6 @@
 ### Source code
-[Dapatkan source code web disini](https://github.com/nscdlg/pn-painan "website")
-[Dapatkan source code webview disini](https://github.com/nscdlg/webview-pnpainan "webview")
+[WEB](https://github.com/nscdlg/pn-painan "website") |
+[WEBVIEW](https://github.com/nscdlg/webview-pnpainan "webview")
 
 ### hint
 Gunakan ctrl+f untuk mencari kode dibawah ini pada text editor anda
