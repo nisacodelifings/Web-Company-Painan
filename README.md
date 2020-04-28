@@ -60,7 +60,7 @@ ke kode berikut. jangan lupa ubah dari 11 jadi 12 dst..
 > anda bisa baca kode html disini untuk mengubah lain2 [https://www.w3schools.com/html/](https://www.w3schools.com/html/ "https://www.w3schools.com/html/")
 
 # (+) berita/blog terbaru
-Perhatikan nama classnya..
+Perhatikan nama id-nya..
 Apakah anda ingin mengubah blog terbaru di pengumuman atau yg kegiatanpn?
 
 1. Silahkan cari kode berikut
