@@ -97,3 +97,8 @@ tambahkan satu atau lebih berita terbaru dengan copy paste salah satu bagian kod
           <hr></div>
 
 buat disini hanya untuk yg terbaru saja dan sekilas. tambahkan kode diatas juga ke blog/pengumuman.html di bagian kode yg sama. untuk berita full nya ada di blog/judulberita.html lalu pastikan anda menghubungkan `<a href="blog/judulberita.html">` anda sesuai lokasi penyimpanan file (ikuti/pelajari kode sebelumnya)
+
+# (+) blog/berita full konten baru
+**Buatlah folder baru di blog/folder-berita**/***copy-paste-template-kode-dari-folder-berita-yg-sudah-ada*** lalu hubungkan ke kode `<a href="">` di blog/pengumuman.html atau blog/kegiatan.html **dan** index.html dibagian nama id-nya.
+
+Ikuti Syntax kode untuk membuat gambar/tabel/list dll secara ter-template dari web http://pn-painan.go.id yg telah sy buat di https://github.com/nscdlg/elements **Silahkan lihat demo-nya dan pelajari syntax kode-nya utk diterapkan di blog (pengumuman/kegiatan) web http://pn-painan.go.id**
