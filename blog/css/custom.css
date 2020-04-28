@@ -1,0 +1,61 @@
+@media (max-width: 700px){
+  .controller{
+    display: none;
+  }
+}
+@media (min-width: 480px) {
+  .berita-hp{
+    display: none;
+  }
+}
+@media (max-width: 480px){
+  .berita-item{
+    margin-left: -270px;
+    width: 300px;
+  }
+  .berita-lainnya{
+    display: none;
+  }
+}
+.berita-item h1{
+  color: red;
+  cursor: pointer;
+}
+.berita-item h1:hover{
+  color: orange;
+}
+@keyframes text-shadow-multicolor2 {
+  0%{
+    text-shadow: 0 0 black,,0 0 red, 0 0 orange,0 0 yellow,0 0 green,0 0 skyblue,0 0 blue,0 0 white;
+    -webkit-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+  }
+  100%{
+    text-shadow: -1px -1px black,-3px -3px red,-5px -5px orange,-7px -7px yellow,-9px -9px green,-11px -11px skyblue,-13px -13px blue,-15px -15px white;
+    -webkit-transform: translateX(8px) translateY(8px);
+    transform: translateX(8px) translateY(8px);
+  }
+}
+@media (max-width: 1200px){
+  .mobile-none{
+    display: none;
+  }
+}
+.lainnya:active{
+	background-color: #eea412;
+}
+.blog-item{
+	background-color: red;
+}
+.blog-item p{
+	color: white;
+}
+.blog-item a{
+	color: #fff;
+}
+.blog-item span i,.blog-item span a{
+	color: white;
+}
+.blog-item{
+  height: 550px;
+}

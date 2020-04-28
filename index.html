@@ -1,0 +1,2461 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pengadilan Negeri Painan</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/versions.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="js/modernizer.js"></script>
+<script type="text/javascript">
+  function bisaDiEdit(div){
+    div.style.border ="1 px solid blue";
+    div.style.padding = "20px";
+    div.contentEditable= true;
+  }
+  function bisaDiBacaAja(div){
+    div.style.border ="1 px solid blue";
+    div.style.padding = "20px";
+    div.contentEditable= false;
+    alert("Run Ajax POST request")
+  }
+</script>
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="host_version">
+
+    <!-- Start header -->
+    <header class="top-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: red;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" style="width: 250px;height: 50px;" alt="" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbars-host">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a style="color: white" class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown"> Publik </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                <!-- keterbukaan informasi -->
+                                <a class="dropdown-item" href="index.html/#keterbukaan-informasi">Keterbukaan Informasi</a>
+                                <!-- jam kerja -->
+                                <a data-toggle="modal" data-target="#jamkerja" class="dropdown-item">Jam kerja</a>
+                                <!-- jadwal sidang -->
+                                <a href="http://sipp.pn-painan.info/list_jadwal_sidang" class="dropdown-item">Jadwal sidang</a>
+                                <!-- informsdi melalui sms -->
+                                <a data-toggle="modal" data-target="#smscenter" class="dropdown-item">Informasi melalui SMS</a>
+                                <!-- informasi denda tilang -->
+                                <a data-toggle="modal" data-target="#etilang" class="dropdown-item">Informasi denda tilang</a>
+                                <a data-toggle="modal" data-target="#prosedurpi" class="dropdown-item">Prosedur Permohonan Informasi</a>
+                                <a data-toggle="modal" data-target="#pbp" class="dropdown-item">Panjar Biaya Perkara Perdata</a>
+                                <a href="http://sipp.pn-painan.info/" class="dropdown-item">Penelusuran Perkara</a>
+                                <a href="https://putusan3.mahkamahagung.go.id/pengadilan/profil/pengadilan/pn-painan" class="dropdown-item">Direktori Putusan</a>
+                                <a href="http://delegasi.pn-painan.info/" class="dropdown-item">Delegasi</a>
+                                <a href="http://sipp.pn-painan.info/statistik.php" class="dropdown-item">Statistik Perkara</a>
+                                <!-- hmmm -->
+                                <a href="https://siwas.mahkamahagung.go.id/cara_melapor" class="dropdown-item">Formulir Pengaduan Online</a>
+                                <!-- hmmm -->
+                                <a data-toggle="modal" data-target="#pengaduan" class="dropdown-item">Syarat dan Tata cara Pengaduan</a>
+                                <a data-toggle="modal" data-target="#lakip" class="dropdown-item">LAKIP</a>
+                                <a data-toggle="modal" data-target="#sakip" class="dropdown-item">SAKIP</a>
+                                <a data-toggle="modal" data-target="#aset" class="dropdown-item">Aset dan Inventaris</a>
+                                <a data-toggle="modal" data-target="#lt" class="dropdown-item">Laporan Tahunan</a>
+                                <a data-toggle="modal" data-target="#lhksn" class="dropdown-item">LHKASN</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown"> Hukum </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                <a class="dropdown-item" data-toggle="modal" data-target="#a">Prosedur Pengajuan Perkara</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#b">Biaya Perkara</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#c">Jaringan Dokumentasi Informasi Hukum</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#hm">Apa itu POSBAKUM </a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#e">Prosedur Posbakum</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#biayaa">Biaya Posbakum</a>
+                                <a class="dropdown-item" href="https://drive.google.com/file/d/0B_MTiTb_El5SRkMzclBJaEpSYlk/edit">Peraturan dan Kebijakan Posbakum </a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#kk">Pengawasan Posbakum</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown"> Tentang Pengadilan </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                <a class="dropdown-item" data-toggle="modal" data-target="#pkp">Pengantar Ketua Pengadilan</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#tpf">Tugas pokok dan fungsi</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#vm">Visi dan Misi</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#sp">Sejarah Pengadilan</a>
+                                <a class="dropdown-item" href="https://drive.google.com/file/d/1bAraK-9n-LGY1afC2QjEY3GvXsQvy49F/view">Profil Hakim, Pegawai dan Honorer</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#wy">Wilayah Yuridiksi</a>
+                                <a class="dropdown-item" href="https://e-learning.mahkamahagung.go.id/">E-Learning</a>
+                                <a class="dropdown-item" href="https://jdih.mahkamahagung.go.id/v2/beranda/database/3.-Yurisprudensi/">Yurisprudensi </a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#rencana">Rencana Strategis</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#rka">Rencana kerja dan Anggaran</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#spp">Standar Pelayanan dan pengadilan</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#hag">Himbauan atas Gratifikasi</a>
+                                <a class="dropdown-item" href="https://bawas.mahkamahagung.go.id/bawas_doc/doc/kode_etik_hakim.pdf">Kode Etik Hakim</a>
+                                <a class="dropdown-item" href="https://bawas.mahkamahagung.go.id/bawas_doc/doc/kode_etik_js_pp(1).pdf">Kode Etik Panitera/Jurusita</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#so">Struktur organisasi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown"> Berita </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                <a class="dropdown-item" href="#pengumuman">Pengumuman</a>
+                                <a class="dropdown-item" href="#kegiatanpn">Kegiatan PN</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown"> Hubungi </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                <a class="dropdown-item" href="https://www.mahkamahagung.go.id/id">Alamat Pengadilan negeri</a>
+                                <a class="dropdown-item" href="https://www.mahkamahagung.go.id/id">Alamat Pengadilan tinggi</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End header -->
+    <!-- modal -->
+    <div class="modal fade" id="jamkerja" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Jam kerja</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <p>Berdasarkan Pasal 5 ayat (2) Keputusan Ketua Mahkamah Agung RI Nomor: 071/KMA/SK/V/2008 tanggal 14 Mei 2008, jam kerja yang berlaku pada Pengadilan Negeri Painan adalah:</p>
+
+                        <h2>Jam Kerja:</h2>
+                        <p>Hari Senin s.d. Kamis: pukul 08.00 s.d. 16.30 WIB
+                            <br> Hari Jumat: pukul 08.00 s.d. 17.00 WIB</p>
+                        <h2>Jam Istirahat:</h2>
+
+                        <p>Hari Senin s.d. Kamis: pukul 12.00 s.d. 13.00 WIB
+                            <br> Hari Jumat: pukul 11.30 s.d. 13.00 WIB</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="a" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Prosedur Pengajuan Perkara</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:list -->
+                        <ul>
+                            <li><a href="http://website.pn-painan.go.id/index.php?id=130:prosedur-perkara-perdata-gugatan&amp;catid=27">PROSEDUR PERKARA PERDATA GUGATAN</a></li>
+                            <li><a href="http://website.pn-painan.go.id/index.php?id=168:prosedur-perkara-perdata-permohonan&amp;catid=27">PROSEDUR PERKARA PERDATA PERMOHONAN</a></li>
+                            <li><a href="http://website.pn-painan.go.id/index.php?id=169:prosedur-perkara-pidana-biasa&amp;catid=27">PROSEDUR PERKARA PIDANA BIASA</a></li>
+                            <li><a href="http://website.pn-painan.go.id/index.php?id=170:prosedur-perkara-pidana-banding-2&amp;catid=27">PROSEDUR PERKARA PIDANA BANDING</a></li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="c" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Jaringan Dokumentasi Informasi Hukum</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        belum ada.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="ahag" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Himbauan Atas Gratifikasi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>Berdasarkan Surat dari Sekretaris Mahkamah Agung Republik Indonesia Nomor : 097-1/SEK/KU.01/3/2013 tanggal 1 Maret 2013, perihal Himbauan Terkait Gratifikasi, yang ditujukan Kepada Yth. Yang Mulia Para Pimpinan Mahkamah Agung RI, Yang Mulia Para Hakim Agung Mahkamah Agung RI, Para Hakim Ad Hoc Mahkamah Agung RI, Panitera Mahkamah Agung RI, Para Pejabat Eselon I Mahkamah Agung, Para Pejabat Eselon II Mahkamah Agung RI, Para Hakim Yustisial Mahkamah Agung RI, Para Pejabat Eselon III dan IV Mahkamah Agung RI, Para Ketua Pengadilan Tingkat Banding serta Para Ketua Pengadilan Tingkat Pertama.</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p><a href="http://www.mahkamahagung.go.id/images/news/HIMBAUAN_TERKAIT_GRATIFIKASI.pdf">LAMPIRAN 1</a></p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p><a href="http://bawas.mahkamahagung.go.id/portal/images/sk%20kma%20no.138a-kma-sk-viii-2014.pdf">LAMPIRAN 2</a></p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="arka" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Rencana Kerja dan Anggaran</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        belum ada.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="keh" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Rencana Kerja dan Anggaran</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        belum ada.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="spp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Standar Pelayanan Pengadilan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>Berangkat dari niat untuk membangun kepercayaan masyarakat terhadap badan peradilan, meningkatkan kualitas pelayanan bagi masyarakat khususnya pencari keadilan yang diselenggarakan oleh Mahkamah Agung RI dan badan-badan peradilan di bawahnya dengan sebaik-baiknya, dan untuk memenuhi amanat UU RI No. 25 Tahun 2009 tentang Pelayanan Publik, maka pada tanggal 9 Februari 2012 Ketua Mahkamah Agung RI telah mengeluarkan Surat Keputusan Ketua Mahkamah Agung No. 026/KMA/SK/II/2012 tentang Standar Pelayanan Peradilan sebagai dasar bagi setiap satuan kerja pada seluruh badan peradilan dalam memberikan pelayanan kepada publik.&nbsp;</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>Selengkapnya:</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SOVZ0MjVYTGNEdjQ/edit?usp=sharing" target="_blank" rel="noreferrer noopener"><strong>SK KMA No. 026/KMA/SK/II/2012</strong></a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SdmtMTDhqR2hoYms/edit?usp=sharing" target="_blank" rel="noreferrer noopener"><strong>Lampiran SK KMA No. 026/KMA/SK/II/2012</strong></a></li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:paragraph -->
+                        <p></p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="rencana" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Rencana Strategis</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>Download disini</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>RENSTRA&nbsp; 2015 - 2019 &nbsp; <a href="http://website.pn-painan.go.id/images/pdf_file/RENSRTA%202015%20-%202019.pdf">Klik disini</a></li>
+                            <li>MATRIK RENSTRA&nbsp; 2015 - 2019&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/images/pdf_file/MATRIK%20RENSTRA%20%202015%20-%202019.pdf">Klik disini</a></li>
+                            <li>MATRIK RENCANA STRATEGIS KINERJA 2015 - 2019&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/images/pdf_file/MATRIK%20RENCANA%20STRATEGIS%20KINERJA%202015%20-%202019.pdf">Klik disini</a></li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="pkp" tabindex="-1" role="dialog" aria-labelledby="pkp" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Pengantar Ketua Pengadilan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p><em>Dalam Halaman ini merupakan sambutan / Pengantar Ketua Pengadilan Negeri Painan&nbsp;</em></p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <img src="images/ketua.jpg" alt="" style="width:380px;height:550px;margin-bottom:20px">
+                        <br>
+                        <p>Assalamualaikum Warahmatullohi Wabarokatuh. Salam Sejahtera.</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>Puji syukur ke hadirat Allah, atas peluncuran situs resmi Pengadilan Negeri Painan dengan alamat www.pn-painan.go.id sebagai implementasi dari SK Ketua Mahkamah Agung Republik Indonesia Nomor : 144/SK/KMA/VIII/2007 tanggal 28 Agustus 2007 tentang Keterbukaan Informasi di Pengadilan. &nbsp;Dalam situs Pengadilan Negeri Painan digunakan untuk penyebaran informasi, baik informasi tentang putusan maupun informasi lain yang berhubungan dengan tugas dan fungsi Pengadilan Negeri Painan sebagai Peradilan Umum yang dapat dimanfaatkan tidak hanya bagi para pencari keadilan tetapi juga oleh masyarakat luas secara umum.</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>Dengan penempatan informasi pada situs, diharapkan Pengadilan Negeri Painan menjadi pengadilan yang dapat lebih profesional dan transparan dalam melayani para pencari keadilan demi mewujudkan kepastian hukum dan keadilan.</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>Demikian sambutan singkat&nbsp; ini, semoga situs Pengadilan Negeri Painan bermanfaat bagi kita semua dalam pengembangan teknologi informasi. Amin.</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>Wassalamualaikum Warahmatullohi Wabarokatuh.</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="biayaa" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Biaya POSBAKUM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>Biaya :</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Biaya penyelenggaraan sidang di luar gedung pengadilan di bebankan kepada anggaran satuan pengadilan terdiri dari :</li>
+                            <li>Biaya tempat persidangan jika diperlukan.</li>
+                            <li>Biaya perlengkapan sidang jika diperlukan dan</li>
+                            <li>Biaya perjalanan dinas hakim, panitera dan petugas lainnya.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Dalam hal sidang di luar gedung pengadilan mengikutsertakan petugas Posbakum pengadilan, maka biaya perjalanan dinas sebagaimana yang dimaksud di poin 1 termasuk untuk petugas Posbakum Pengadilan.</li>
+                            <li>Dalam hal terdapat orang atau sekelompok orang selain petugas Posbakum pengadilan yang ingin ikut serta memberikan penyuluhan hukum di dalam penyelenggaraan sidang di luar gedung pengadilan untuk biaya yang muncul di tanggung sendiri oleh orang atau sekelompok orang yang bersangkutan</li>
+                            <li>Penggunaan anggaran penyelenggaraan sidang diluar gedung pengadilan disesuaikan dengan kebutuhan dan karakteristik kebutuhan.</li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="kk" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">PENGAWASAN POSBAKUM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <h2>Pengawasan :</h2>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Pengawasan terhadap Penyelenggaraan Layanan Hukum bagi masyarakat tidak mampu di pengadilan dilakukan oleh ketua pengadilan.</li>
+                            <li>Ketua Pengadilan bertanggung jawab dalam pelaksanaan layanan Hukum bagi&nbsp;masyarakat tidak mampu yang efektif,&nbsp;transparan dan sesuai asas dan tujuan.</li>
+                            <li>Panitera Pengadilan membuat buku Registrasi Khusus untuk mengkontrol pelaksanaan pemberian layanan hukum bagi masyarakat tidak mampu berupa pembebasan biaya perkara dan penyelenggaraan sidang di luar gedung pengadilan yang di laporkan kepada ketua pengadilan.</li>
+                            <li>Panitera Pengadilan melakukan Pengawasan Harian Terhadap jalannya Posbakum Pengadilan dan melaporkan kepada Ketua Pengadilan.</li>
+                            <li>Petugas Posbakum pengadilan mengisi buku registrasi khusus yang di sediakan</li>
+                        </ol>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="hm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Apa itu POSBAKUM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <p>Setiap orang atau sekelompok orang yang tidak mampu secara ekonomi dan atau tidak memiliki akses pada informasi dan konsultasi hukum yang memerlukan layanan berupa pemberian informasi, konsultasi , advis hukum atau pembuatan dokumen hukum yang dibutuhkan, dapat menerima layanan pada Posbakum Pengadilan Negeri Painan.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="sp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Sejarah Pengadilan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>Pengadilan Negeri Painan didirikan pada tahun 1974, terletak di Salido Kecamatan IV Jurai yang merupakan Ibukota Kabupaten Pesisir Selatan, tepatnya di pinggir Jalan Raya Painan-Padang yang berjarak Â± 4 km dari Pusat Kota Painan.</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>Sejarah Pengadilan Negeri Painan bermula saat kemerdekaan Republik Indonesia, daerah hukum Pengadilan Negeri Painan termasuk juga Kabupaten Kerinci dalam satu kabupaten yang dinamai P.S.K. (Kabupaten Pesisir Selatan â€“ Kerinci) yang kemudian dipecah menjadi dua kabupaten yaitu Kabupaten Pesisir Selatan Dan Kabupaten Kerinci yang termasuk daerah hukum Pengadilan Negeri Padang.</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>Pada tanggal 1 Juni 1967 Pengadilan Negeri Painan berdiri sendiri yang berkedudukan di Painan dengan menumpang di gedung Pemerintah Daerah Tingkat II Pesisir Selatan. Baru pada tahun 1974 dibangun gedung kantor Pengadilan Negeri Painan yang terletak di Jalan Raya Medan Sabah Salido (Sekarang Jalan Jenderal Sudirman) berjarak Â± 4 km dari pusat Ibu Kota Pesisir Selatan.</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>Ketua pengadilan negeri painan waktu itu adalah Baharuddin Lubis, S.H. Yang meletakkan batu pertama pembangunan gedung Pengadilan Negeri Painan pada tanggal 17 Januari 1974 dan diresmikan oleh Ketua Pengadilan Tinggi Sumatera Barat Dan Riau pada tanggal 16 September 1974.</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>Gedung Pengadilan Negeri Painan memiliki luas 430 mÂ² yang berdiri di atas tanah seluas 3102 mÂ² yang terdiri atas :</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Bangunan tidak bertingkat dengan luas : 64 mÂ²</li>
+                            <li>Bangunan bertingkat yang terdiri atas :
+                                <ol>
+                                    <li>Bangunan lantai bawah dengan luas : 280 mÂ²</li>
+                                    <li>Bangunan lantai atas dengan luas : 150 mÂ²</li>
+                                    <li>Yang mengalami perluasan pada tahun 1985 sebanyak 64 mÂ²</li>
+                                    <li>Diperluas kembali pada tahun 1995 sebanyak 110 mÂ²</li>
+                                </ol>
+                            </li>
+                            <li>Selain itu Pengadilan Negeri Painan juga memiliki bangunan sendiri yang digunakan untuk ruang perpustakaan dan ruang arsip seluas : 138 mÂ²</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:paragraph -->
+                        <p>Pengadilan Negeri Painan mempunyai satu tempat sidang yang terletak di Balai Selasa Kecamatan Ranah Pesisir sebelah selatan dari Painan yang berjarak Â± 80 km dari ibukota kabupaten. Gedung tersebut didirikan pada tahun 1981 dengan luas bangunan 187 mÂ² di atas tanah seluas 1500 mÂ².</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>Selain gedung kantor di Salido dan tempat sidang di Balai Selasa, Pengadilan Negeri Painan juga mempunyai sebidang tanah seluas 2945 mÂ² di Tapan Kecamatan Pancung Soal (Sekarang Kecamatan Basa Ampek Balai Tapan) pada tahun 1985 yang belum ada dibangun tempat sidang sampai sekarang.</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="wy" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Wilayah Yuridiksi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>Daerah hukum Pengadilan Negeri Painan meliputi seluruh wilayah hukum Kabupaten Pesisir Selatan yang memanjang dari utara ke selatan dengan luas 5749,89 kmÂ². Kabupaten Pesisir Selatan dengan ibukota kabupaten yang berkedudukan di Painan terdiri atas 15 kecamatan yaitu :</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Kecamatan Tarusan</li>
+                            <li>Kecamatan Bayang</li>
+                            <li>Kecamatan Bayang Utara</li>
+                            <li>Kecamatan IV Jurai</li>
+                            <li>Kecamatan Batang Kapas</li>
+                            <li>Kecamatan Sutera</li>
+                            <li>Kecamatan Lengayang</li>
+                            <li>Kecamatan Ranah Pesisir</li>
+                            <li>Kecamatan Linggo Sari Baganti</li>
+                            <li>Kecamatan Pancung Soal</li>
+                            <li>Kecamatan Air Pura</li>
+                            <li>Kecamatan Basa Ampek Balai Tapan</li>
+                            <li>Kecamatan Basa Ampek Hulu Tapan</li>
+                            <li>Kecamatan Lunang</li>
+                            <li>Kecamatan Silaut</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:paragraph -->
+                        <p>Dari luas daerah kabupaten pesisir selatan 5749,89 kmÂ² kabupaten ini berbatasan dengan :</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Sebelah selatan dengan dan Kabupaten Muko-Muko Propinsi Bengkulu.</li>
+                            <li>Sebelah utara dengan Kota Padang</li>
+                            <li>Sebelah timur dengan Kabupaten Solok Dan Solok Selatan Dan Kabupaten Kerinci Propinsi Jambi</li>
+                            <li>Sebelah barat dengan Samudera Hindia</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:image -->
+                        <img src="http://website.pn-painan.go.id/images/peta.png" style="width:350px;" alt="peta" />
+                        <!-- /wp:image -->
+
+                        <!-- wp:paragraph -->
+                        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>Peta Wilayah Yurisdiksi Pengadilan Negeri Painan</strong></p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="tpf" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Tugas Pokok & Fungsi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>Pembagian tugas pokok dan fungsi&nbsp;pada Pengadilan Negeri Painan&nbsp;sesuai dengan Peraturan Mahkamah Agung RI Nomor 7 Tahun 2015 tentang Organisasi dan Tata Kerja Kepaniteraan dan Kesekretariatan Peradilan, yaitu :</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Ketua&nbsp;dan Wakil Ketua (Pimpinan Pengadilan Negeri)</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Ketua mengatur pembagian tugas para hakim, membagikan berkas perkara dan surat-surat lain yang berhubungan dengan perkara yang ditujukan kepada Majelis Hakim untuk diselesaikan.</li>
+                            <li>Mengadakan Pengawasan dan pembinaan terhadap pelaksanaan tugas serta tingkah laku hakim, Panitera/Sekretaris, Pejabat struktural, Pejabat Fungsional serta perangkat administrasi Peradilan lainnya baik yang berstatus PNS maupun Honorer secara berkala.</li>
+                            <li>Menjaga agar penyelenggaraan peradilan terselenggara dengan optimal dan seksama.</li>
+                            <li>Mengembangkan&nbsp;&nbsp;dan melaksanakan kebijakan-kebijakan yang telah dibuat oleh Mahkamah Agung untuk kelancaran pelaksanaan tugas pokok dan fungsi.</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Hakim</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Melaksanakan Tugas Kekuasaan Kehakiman didaerah hukumnya dan tugas lain yang menjadi tanggung jawabnya.</li>
+                            <li>Memeriksa, memutus dan menyelesaikan perkara yang diterimanya.</li>
+                            <li>Melaksanakan tugas pengawasan/pembinaan (hakim pengawas bidang) yang ditugaskan kepadanya</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Panitera</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Pelaksanaan koordinasi, pembinaan dan pengawasan pelaksanaan tugas dalam pemberian dukungan di bidang teknis;&nbsp;</li>
+                            <li>Pelaksanaan pengelolaan administrasi perkara perdata, pidana&nbsp;&nbsp;dan pengelolaan administrasi perkara khusus;&nbsp;</li>
+                            <li>Pelaksananaan pengelolaan administrasi perkara, penyajian data perkara, dan transparansi perkara;</li>
+                            <li>Pelaksanaan administrasi keuangan dalam program teknis dan keuangan perkara yang ditetapkan berdasarkan &nbsp; peraturan dan perundang-undangan, minutasi, evaluasi dan administrasi Kepaniteraan;</li>
+                            <li>Pelaksanaan mediasi;</li>
+                            <li>Pembinaan teknis kepaniteraan dan kejurusitaan; dan</li>
+                            <li>Pelaksanaan fungsi lain yang diberikan oleh Ketua Pengadilan Negeri.</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Sekretaris</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Penyiapan bahan pelaksanaan urusan perencanaan program dan anggaran;</li>
+                            <li>Pelaksanaan urusan kepegawaian;</li>
+                            <li>Pelaksanaan urusan keuangan;</li>
+                            <li>Penyiapan bahan pelaksanaan penataan organisasi dan tata laksana;</li>
+                            <li>Pelaksanaan pengelolaan teknologi informasi dan statistik;</li>
+                            <li>Pelaksanaan urusan surat menyurat, arsip, perlengkapan, rumah tangga, keamanan, keprotokolan, hubungan masyarakat, dan perpustakaan; dan</li>
+                            <li>Penyiapan bahan pelaksanaan pemantauan, evaluasi dan dokumentasi serta pelaporan di lingkungan Kesekretariatan Pengadilan Negeri Painan.</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Panitera Muda Pidana</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Pelaksanaan pemeriksaan dan penelaahan kelengkapan berkas perkara pidana;</li>
+                            <li>Pelaksanaan registrasi perkara pidana;</li>
+                            <li>Pelaksanaan penerimaan permohonan praperadilan dan pemberitahuan kepada termohon;</li>
+                            <li>Pelaksanaan distribusi perkara yang telah diregister untuk diteruskan kepada Ketua Majelis Hakim berdasarkan Penetapan Penunjukkan Majelis Hakim dari Ketua Pengadilan;</li>
+                            <li>Pelaksanaan penghitungan, penyiapan dan pengiriman penetapan penahanan, perpanjangan penahanan dan penangguhan penahanan;</li>
+                            <li>Pelaksanaan penerimaan permohonan ijin penggeledahan dan ijin penyitaan dari penyidik;</li>
+                            <li>Pelaksanaan penerimaan kembali berkas perkara yang sudah diputus dan diminutasi;</li>
+                            <li>Pelaksanaan pemberitahuan isi putusan tingkat pertama kepada para pihak yang tidak hadir;</li>
+                            <li>Pelaksanaan penyampaian pemberitahuan putusan tingkat banding, kasasi dan peninjauan kembali kepada para pihak;</li>
+                            <li>Pelaksanaan penerimaan dan pengiriman berkas perkara yang dimohonkan banding, kasasi dan peninjauan kembali;</li>
+                            <li>Pelaksanaan pengawasan terhadap pemberitahuan isi putusan upaya hukum kepada para pihak dan menyampaikan relas penyerahan isi putusan kepada Pengadilan Tinggi dan Mahkamah Agung;</li>
+                            <li>Pelaksanaan pemberitahuan isi putusan upaya hukum kepada Jaksa Penuntut Umum dan Terdakwa;</li>
+                            <li>Pelaksanaan penerimaan permohonan eksekusi;</li>
+                            <li>Pelaksanaan penyimpanan berkas perkara yang belum mempunyai kekuatan hukum tetap;</li>
+                            <li>Pelaksanaan penyerahan berkas perkara yang sudah berkekuatan hukum tetap kepada Panitera Muda Hukum;</li>
+                            <li>Pelaksanaan urusan tata usaha kepaniteraan; dan</li>
+                            <li>Pelaksanaan fungsi lain yang diberikan oleh Panitera.</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Panitera Muda Perdata</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Pelaksanaan pemeriksaan dan penelaahan kelengkapan berkas perkara perdata;</li>
+                            <li>Pelaksanaan registrasi perkara gugatan dan permohonan;</li>
+                            <li>Pelaksanaan distribusi perkara yang telah di register untuk diteruskan kepada Ketua Majelis Hakim berdasarkan Penetapan Penunjukkan Majelis Hakim dari Ketua Pengadilan;</li>
+                            <li>Pelaksanaan penerimaan kembali berkas perkara yang sudah diputusa dan diminutasi;</li>
+                            <li>Pelaksanaan pemberitahuan isi putusan tingkat pertama kepada para pihak yang tidak hadir;</li>
+                            <li>Pelaksanaan penyampaian pemberitahuan putusan tingkat banding, kasasi dan peninjauan kembali kepada para pihak;</li>
+                            <li>Pelaksanaan penerimaan dan pengiriman berkas perkara yang dimohonkan banding, kasasi dan peninjauan kembali;</li>
+                            <li>Pelaksanaan pengawasan terhadap pemberitahuan isi putusan upaya hukum kepada para pihak dan menyampaikan relas penyerahan isi putusan kepada Pengadilan Tinggi dan Mahkamah Agung;</li>
+                            <li>Pelaksanaan penerimaan konsinyasi;</li>
+                            <li>Pelaksanaan penerimaan permohonan eksekusi;</li>
+                            <li>Pelaksanaan penyimpanan berkas perkara yang belum mempunyai kekuatan hukum tetap;</li>
+                            <li>Pelaksanaan penyerahan berkas perkara yang sudah berkekuatan hukum tetap kepada Panitera Muda Hukum;</li>
+                            <li>Pelaksanaan urusan tata usaha kepaniteraan; dan</li>
+                            <li>Pelaksanaan fungsi lain yang diberikan oleh Panitera.</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Panitera Muda Hukum</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Pelaksanaan pengumpulan, pengelolaan dan penyajian data perkara;</li>
+                            <li>Pelaksanaan penyajian statistik perkara;</li>
+                            <li>Pelaksanaan penyusunan dan pengiriman pelaporan perkara;</li>
+                            <li>Pelaksanaan penataan, penyimpanan dan pemeliharaan arsip perkara;</li>
+                            <li>Pelaksanaan kerja sama dengan Arsip Daerah untuk penitipan berkas perkara;</li>
+                            <li>Pelaksanaan penyiapan, pengelolaan dan penyajian bahan-bahan yang berkaitan dengan transparansi perkara;</li>
+                            <li>Pelaksanaan penghimpunan pengaduan dari masyarakat, hubungan masyarakat; dan</li>
+                            <li>Pelaksanaan fungsi lain yang diberikan oleh Panitera.</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Sub Bagian Perencanaan, Informasi dan Teknologi, Pelaporan</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Menyusun RKA-KL dan membahas usulan revisi kegiatan dan anggaran (DIPA) serta penyiapan bahan usulan APBNP bersama dengan KPA (Kuasa Pengguna Anggaran) dan PPK (Pejabat Pembuat Komitmen).</li>
+                            <li>Operator Aplikasi RKA-KL.</li>
+                            <li>Mengkoordinir, menginventarisir segala kebutuhan masing-masing bidang dalam hal penganggaran.</li>
+                            <li>Mengelola, menyetor PNBP,membuat pembukuan PNBP dan mengisinya pada Aplikasi SIMARI dan Simponi PNBP.</li>
+                            <li>Mengisi realisasi anggaran pada website Badilum.</li>
+                            <li>Mengkoordinir Penyusunan Perjanjian Kinerja Individu.</li>
+                            <li>Monitoring kelancaran akses internet dan jaringan serta membantu pimpinan dalam pengembangan aplikasi untuk wewujudkan Pengadilan yang Modern berbasiskan IT.</li>
+                            <li>Memantau pelaksanaan tugas IT sebagai fasilitator SIPP, baik update versi terbaru,database,singkronisasi,penambahan User dan referensi, problem solving dalam pengaplikasian SIPP, pengelolaan Website, server dan jaringan internet.</li>
+                            <li>Menelaah data/informasi sebagai bahan penyusunan rencana kerja.</li>
+                            <li>Menelaah data/informasi sebagai bahan perumusan kebijakan umum dan teknis operasional perencanaan satker.</li>
+                            <li>Mengumpulkan dan menelaah data/informasi untuk penyiapan bahan penyusunan perencanaan satker.</li>
+                            <li>Mengumpulkan dan menelaah data/informasi untuk penyiapan bahan perumusan kebijakan umum dan teknis bidang komunikasi dan informatika.</li>
+                            <li>Menyiapkan data sebagai bahan monitoring dan evaluasi pelaksanaan rencana kerja satker.</li>
+                            <li>Menyiapkan data/informasi sebagai bahan penyusunan pelaporan pelaksanaan rencana kerja satker.</li>
+                            <li>Menyiapkan rumusan kebijakan teknologi informasi.</li>
+                            <li>Menyusun konsep rencana kerja (Renja).</li>
+                            <li>Menyusun konsep Rencana Strategis (Renstra).</li>
+                            <li>Menyusun konsep Rencana Kinerja Tahunan (RKT).</li>
+                            <li>Menyusun konsep Pentepan Kinerja Tahunan (PKT).</li>
+                            <li>Menyusun konsep restrukturisasi program dan kegiatan.</li>
+                            <li>Menyusun konsep Indikator Kinerja Utama (IKU).</li>
+                            <li>Menyusun konsep Rencana Kerja dan Anggaran (RKA).</li>
+                            <li>Menyusun konsep Daftar Isian Pelaksanaan Anggaran (DIPA) dan Petunjuk Operasional Kegiatan (POK).</li>
+                            <li>Menyusun konsep usulan revisi RKA, DIPA, POK dan atau permintaan Anggaran Belanja Tambahan (ABT).</li>
+                            <li>Memantau pelaksanaan DIPA.</li>
+                            <li>Menyusun konsep tanggapan Laporan Hasil Pemeriksaan (LHP) dari aparat pengawasan fungsional dan pengawasan masyarakat.</li>
+                            <li>Melaksanakan tugas kedinasan lain yang diberikan Sekretaris dan Pimpinan sesuai dengan peraturan perundang-undangan yang berlaku.</li>
+                            <li>Mengupload segala bentuk laporan dan berita ke dalam website.</li>
+                            <li>Melaksanakan pengelolaan infrastruktur hardware, meliputi server, komputer dan perangkat pendukungnya.</li>
+                            <li>Melaksanakan pengelolaan infrastruktur jaringan komputer.</li>
+                            <li>Melaksanakan pengelolaan sistem dan teknologi informasi.</li>
+                            <li>Melaksanakan tugas kedinasan lain yang diberikan Sekretaris dan Pimpinan sesuai dengan peraturan perundang-undangan yang berlaku.</li>
+                            <li>Membuat Laporan Kinerja Triwulanan berdasarkan PP 39 Tahun 2006.</li>
+                            <li>Membuat Laporan Kinerja Semesteran.</li>
+                            <li>Menyiapkan bahan penyusunan/format evaluasi dan pelaporan kegiatan.</li>
+                            <li>Menghimpun, menyusun dan menganalisis laporan pelaksanaan tugas masing-masing sub bagian kesekretariatan dan kepaniteraan.</li>
+                            <li>Menyiapkan dan melaksanakan evaluasi dan monitoring pelaksanaan program, kegiatan dan anggaran.</li>
+                            <li>Menghimpun, menyusun dan mengkoordinasikan penyusunan Laporan Tahunan dan LKJIP.</li>
+                            <li>Melaksanakan tugas kedinasan lain yang diberikan Sekretaris dan Pimpinan sesuai dengan peraturan perundang-undangan yang berlaku.</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Sub Bagian Kepegawaian Organisasi dan Tata Laksana</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Menata dan memelihara file/berkas kepegawaian pegawai.</li>
+                            <li>Menyusun dan membuat Daftar Urut Kepangkatan, Daftar Urut Senioritas dan Bezetting.</li>
+                            <li>Mengusulkan pengangkatan Pegawai Negeri Sipil, kenaikan pangkat, pengangkatan dalam jabatan, mutasi, tanda kehormatan dan pensiun.</li>
+                            <li>Menyusun laporan bulanan urusan kepegawaian.</li>
+                            <li>Membuat dan membalas surat dinas.</li>
+                            <li>Mengusulkan penerbitan askes, karpeg, karis/karsu dan taspen.</li>
+                            <li>Mempersiapkan bahan dan mencatat seluruh hasil untuk rapat Baperjakat.</li>
+                            <li>Melakukan pengelolaan SIKEP dan KOMDANAS.</li>
+                            <li>Membuat surat tugas Hakim dan Pegawai.</li>
+                            <li>Menata arsip kepegawaian.</li>
+                            <li>Merekapitulasi absen Hakim dan Pegawai.</li>
+                            <li>Membuat daftar nominatif dan KP4.</li>
+                            <li>Menyiapkan penyelenggaraan penyumpahan PNS dan penyumpahan/pelantikan jabatan.</li>
+                            <li>Membuat surat keputusan kenaikan gaji berkala dan surat pernyataan masih menduduki jabatan.</li>
+                            <li>Mengusulkan formasi CPNS.</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Sub Bagian Umum dan Keuangan</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Mencatat dan mendistribusikan surat-surat masuk dan surat-surat keluar.</li>
+                            <li>Menyelenggarakan pengadaan barang persediaan untuk keperluan operasional kantor.</li>
+                            <li>Menyimpan dan memelihara surat-surat bukti kepemilikan Barang Milik Negara.</li>
+                            <li>Menyelenggarakan administrasi Persediaan dan Barang Milik Negara serta Membuat Laporan Barang Milik Negara Semester dan Tahunan.</li>
+                            <li>Menyelenggarakan perawatan pelengkapan kantor dan gedung kantor sesuai dengan rencana dan anggaran yang telah ditetapkan dan mengawasi keamanan kantor dengan bekerja sama baik dengan pengamanan internal maupun dengan instansi terkait untuk kelancaran pelaksanaan kegiatan operasional kantor.</li>
+                            <li>Mengkoordinir dan mengawasi kebersihan halaman dan gedung kantor.</li>
+                            <li>Menyelenggarakan administrasi perpustakaan.</li>
+                            <li>Menyusun Rencana Kegiatan dan Penarikan Dana pada tahun berjalan.</li>
+                            <li>Menyusun Rencana Kerja dan Anggaran untuk tahun anggaran berikutnya.</li>
+                            <li>Menerima dan menguji SPP beserta kelengkapannya untuk kemudian menerbitkan SPM.</li>
+                            <li>Melaksanakan tugas perbendaharaan yang bersumber dari PNBP dan APBN (DIPA).</li>
+                            <li>Membuat laporan keuangan secara periodik (Bulanan, Triwulanan, Semesteran dan Tahunan).</li>
+                            <li>Menata dan memelihara dokumen penerimaan dan belanja negara.</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Panitera Pengganti</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Melaksanakan persiapan penyelenggaraan persidangan.</li>
+                            <li>Melaksanakan pencatatan proses persidangan.</li>
+                            <li>Melaksanakan penyusunan berita acara persidangan.</li>
+                            <li>Melaksanakan penyatuan berkas perkara secara kronologis/berurutan;</li>
+                            <li>Melaksanakan penyimpanan berkas perkara sampai dengan perkara diputus dan diminutasi; dan</li>
+                            <li>Melaksanakan penyampaian berkas perkara yang telah diminutasi kepada Panitera Muda sesuai dengan jenis perkara, untuk diteruskan kepada Panitera Muda Hukum.</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Jurusita&nbsp;&nbsp;/ Jurusita Pengganti</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Melaksanakan semua perintah yang diberikan oleh Ketua Pengadilan, Ketua Sidang dan Panitera.</li>
+                            <li>Melaksanakan pemanggilan atas perintah Ketua Pengadilan atau atas perintah Hakim.</li>
+                            <li>Melaksanakan pemberitahuan sita dan eksekusi pada para pihak.</li>
+                            <li>Melaksanakan persiapan sita dan eksekusi.</li>
+                            <li>Menyampaikan pengumuman-pengumuman, teguran-teguran, protes-protes dan pemberitahuan Putusan Pengadilan menurut cara-cara berdasarkan ketentuan Undang-Undang.</li>
+                            <li>Melakukan penyitaan atas perintah Ketua Pengadilan dan dengan teliti melihat lokasi batas-batas tanah yang disita beserta surat-surat yang sah apabila menyita tanah.</li>
+                            <li>Membuat berita acara penyitaan yang salinan resminya diserahkan kepada pihak-pihak yang berkepentingan, antara lain kepada BPN setempat bila terjadi penyitaan sebidang tanah.</li>
+                        </ul>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Bendahara Pengeluaran</li>
+                        </ol>
+                        <!-- /wp:list -->
+
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Menerima, menyimpan, menatausahakan dan membukukan uang/surat berharga dalam pengelolaannya.</li>
+                            <li>Melakukan Pengujian Pembayaran berdasarkan perintah PPK.</li>
+                            <li>Meneliti kelengkapan perintah pembayaran, nilai tagihan yang harus dibayar, jadwal waktu pembayaran dan menguji ketersediaan dana yang bersangkutan, pemeriksaan sesuai pencapaian antara spesifikasi teknis yang disesuaikan dalam Dokumen Perjanjian/Kontrak dan pemeriksaan pengujian ketetapan penggunaan kode Mata Anggaran Pengeluaran 6 (enam) digit.</li>
+                            <li>Menolak Perintah Pembayaran apabila tidak memenuhi persyaratan untuk dibayarkan.</li>
+                            <li>Melakukan pemotongan/pemungutan dari pembayaran yang dilakukan.</li>
+                            <li>Menyetorkan pemotongan/pemungutan penerimaan Negara dari pembayaran yang dilakukan.</li>
+                            <li>Pengelolaan Rekening tempat penyimpanan Uang Persediaan.</li>
+                            <li>Menyampaikan Laporan Pertanggung Jawaban (LPJ) ke kuasa BUN.</li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="vm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Visi dan Misi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p><strong>VISI</strong></p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>TERWUJUDNYA BADAN PERADILAN INDONESIA YANG AGUNG</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p><strong>MISI</strong></p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>1. MENJAGA KEMANDIRIAN BADAN PERADILAN</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>2. MEMBERIKAN PELAYANAN HUKUM YANG BERKEADILAN KEPADA</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>PENCARI KEADILAN</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>3. MENINGKATKAN KUALITAS KEPEMIMPINAN BADAN PERADILAN</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>4. MENINGKATKAN KREDIBILITAS DAN TRANSPARANSI BADAN</p>
+                        <!-- /wp:paragraph -->
+
+                        <!-- wp:paragraph -->
+                        <p>PERADILAN</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="e" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Prosedur POSBAKUM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>Persyaratan untuk mendapatkan layanan dari Posbakum Pengadilan Negeri Painan :</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Surat Keterangan Tidak Mampu (SKTM) yang dikeluarkan oleh Kepala Desa/Lurah/Kepala Wilayah setingkat yang menyatakan bahwa benar yang bersangkutan tidak mampu membayar biaya perkara, atau</li>
+                            <li>Surat Keterangan Tunjangan Sosial lainnya seperti Kartu Keluarga Miskin (KKM), Kartu Jaminan Kesehatan Masyarakat (Jamkesmas), Kartu Beras Miski (Raskin), Kartu Program Harapan (PKH), Kartu Bantuan Langsung Tunai (BLT), Kartu Perlindungan Sosial (KPS), atau dokumen lainnya yang berkaitan dengan daftar penduduk kurang mampu (miskin) dalam basis data terpadu pemerintah yang dikeluarkan oleh instansi lain yang berwenang untk memberikan keterangan tidak mampu, atau</li>
+                            <li>Surat Pernyataan tidak mampu membayar jasa advokat yang dibuat dan ditandatangani oleh pemohon layanan Posbakum Pengadilan dan disetujui oleh Petugas Posbakum Pengadilan Negeri Painan.</li>
+                            <li>Pemberi layanan Posbakum Pengadilan Negeri Painan sebagai Dokumentasi Pengadilan Negeri Painan, yang terdiri dari :</li>
+                        </ul>
+                        <!-- /wp:list -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Formulir permohonan</li>
+                            <li>Dokumen persyaratan yang telah tertera.</li>
+                            <li>Kronologis perkara seperti tanggal dan agenda persidangan</li>
+                            <li>Dokumen hukum yang telah di buat di Posbakum Pengadilan Negeri Painan.</li>
+                            <li>Pernyataan telah diberikannya layanan yang di tandatangani oleh petugas Posbakum Pengadilan Negeri Painan dan penerima layanan dari Posbakum Pengadilan Negeri Painan:</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:list -->
+                        <ul>
+                            <li>Apabila penerima layanan Posbakum Pengadilan Negeri Painan Tidak Sanggup Membayar Perkara,Maka petugas Posbakum Pengadilan Negeri Painan akan memberikan&nbsp;Formulir Permohonan Pembebasan Biaya Perkara&nbsp;untuk diajukan Kepada Ketua Pengadilan Negeri Painan.</li>
+                            <li>Apabila Penerima Layanan Posbakum Pengadilan memerlukan bantuan hukum berupa pendampingan di siding pengadilan, maka petugas Posbakum Pengadilan Negeri Painan akan memberikan informasi mengenai prosedur bantuan hukum di Pengadilan Negeri Painan dan daftar Organisasi Bantuan Hukum sebagai mana dimaksud dalam&nbsp;UU NO. 16 Tahun&nbsp;&nbsp;2011&nbsp;Tentang Bantan Hukum atau Organisasi Bantuan Hukum atau advokat lainnya yang dapat memberikan bantuan hukum secara&nbsp;Cuma-Cuma (GRATIS)</li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="b" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Biaya Perkara</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <img src="images/b.jpg" style="width:430px;height:180px" alt="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="lhksn" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Laporan Harta Kekayaan Aparatur Sipil Negara</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p><strong>PENGERTIAN LHKASN</strong></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>LHKASN adalah daftar seluruh harta kekayaan ASN beserta pasangan dan anak yang masih menjadi tanggungan</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>dan dituangkan ke dalam Formulir LHKASN yang telah ditetapkan oleh Menteri PAN dan RB.</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p><strong>PIHAK YANG WAJIB MENGISI LHKASN</strong></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>Wajib LHKASN adalah seluruh ASN kecuali para pejabat yang ditetapkan sebagai Wajib Laporan Harta Kekayaan</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>Penyelenggaran Negara (Wajib LHKPN). Khusus di lingkungan Direktorat Jenderal Anggaran (DJA),</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>yang ditetapkan sebagai Wajib LHKASN adalah seluruh pegawai di lingkungan DJA <strong>kecuali</strong> para Wajib LHKPN</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>di lingkungan DJA sesuai Keputusan Menteri Keuangan (KMK) Nomor 38/KMK.01/2011 yaitu:</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true,"type":"\\\u0022\\\\\u0022\\\\\\\\\u00221\\\\\\\\\u0022\\\\\u0022\\\u0022"} -->
+                        <ol type="\&quot;\\&quot;\\\\&quot;1\\\\&quot;\\&quot;\&quot;">
+                            <li>Para pejabat eselon II;</li>
+                            <li>Kepala Bagian Perencanaan dan Keuangan;</li>
+                            <li>Kepala Bagian Umum;</li>
+                            <li>Pejabat Pembuat Komitmen;</li>
+                            <li>Panitia Pengadaan Barang/Jasa;</li>
+                            <li>Bendahara;</li>
+                            <li>Para pejabat eselon III dan IV di lingkungan Direktorat Anggaran I, Direktorat Anggaran II, Direktorat Anggaran III dan Direktorat Penerimaan Negara Bukan Pajak.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p><strong>LATAR BELAKANG LHKASN</strong>
+                            <br>Latar belakang dari LHKASN adalah bentuk transparasi ASN dalam rangka pembangunan integritas ASN dan upaya pencegahan penyalahgunaan wewenang serta pencegahan, pemberantasan korupsi, kolusi dan nepotisme.</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="sakip" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">SAKIP</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>Silahkan Download <strong>disini</strong></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list -->
+                        <ul>
+                            <li>2018 <a href="https://drive.google.com/file/d/1Lhl4-UjJfIVCRkfRXQIAkE-5rKe04i7f/view?usp=sharing">Klik disini</a></li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="lt" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Laporan Tahunan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <p><a href="https://drive.google.com/file/d/1Bfaw3L0E3MjMiAOLT6IBnaSPgkfmnGKk/view">Laporan Tahun 2018</a></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="aset" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Aset dan Inventaris</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <p>Maaf belum tersedia</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="lakip" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">LAKIP</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>Download disini</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list -->
+                        <ul>
+                            <li>LAKIP PENGADILAN NEGERI PAINAN TH 2015&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/images/pdf_file/LAKIP_PN._PAINAN_2015.pdf">klik disini</a></li>
+                            <li>LKJIP PENGADILAN NEGERI PAINAN TH 2015 2017 <a href="https://drive.google.com/open?id=1dXEWWduyAdnkzLoHqmBGXw9FHr4sUzeI">klik disini</a></li>
+                            <li>INDIKATOR KINERJA UTAMA <a href="https://drive.google.com/open?id=1LLbUAv6vtFUZsKKCV7vDQlauM7Ja8fVT">klik disini</a></li>
+                            <li>PERJANJIAN KINERJA <a href="https://drive.google.com/open?id=1OCVnbeiIx3jeisEjBuDT53jINaTmkpaV">klik disini</a></li>
+                            <li>RENSTRA <a href="https://drive.google.com/open?id=1jQRdwpQKq0lFoYMDghGnUuEBlxX63_yY">klik disini</a></li>
+                            <li>PERJANJIAN KINERJA REVISI 2017 <a href="https://drive.google.com/open?id=1TkOoIuSXZBWh-MkbtD7GZ3X4AngGeg5R">klik disini</a></li>
+                            <li>LKJIP PENGADILAN NEGERI PAINAN TH 2018&nbsp;<a href="https://drive.google.com/file/d/1H8GSEXjASSehefITSpogZZa7jhIyAh6o/view?usp=sharing">klik disini</a></li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="pengaduan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Syarat dan Tata Cara</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>Mengacu kepada Lampiran Keputusan Ketua Mahkamah Agung RI Nomor 076/KMA/SK/VI/2009 tanggal 4 Juni 2009 tentang Pedoman Pelaksanaan Penanganan Pengaduan di Lingkungan Lembaga Peradilan, berikut ini kami uraikan Syarat dan Tata Cara Penyampaian Pengaduan.</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>Disampaikan secara tertulis</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Pengaduan hanya dapat diterima dan ditangani oleh Mahkamah Agung, Pengadilan Tingkat Banding dan Pengadilan Tingkat Pertama apabila disampaikan secara tertulis oleh Pelapor;</li>
+                            <li>Pelapor dianjurkan untuk menggunakan formulir khusus untuk menyampaikan pengaduannya, baik dalam bentuk cetak maupun elektronik di situs resmi Mahkamah Agung. Meskipun demikian, pengaduan yang tidak menggunakan formulir khusus tersebut tetap akan diterima dan ditindaklanjuti;</li>
+                            <li>Dalam hal pelapor memiliki kesulitan untuk membaca dan menulis, petugas di Mahkamah Agung atau Pengadilan akan membantu menuangkan pengaduan yang ingin disampaikan pelapor secara tertulis dalam formulir khusus pengaduan.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>Menyebutkan informasi secara jelas</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Untuk mempermudah penanganan dan tindak lanjut terhadap pengaduan yang disampaikan, pelapor diharapkan dapat menyebutkan secara jelas informasi mengenai:
+                                <ul>
+                                    <li>Identitas aparat yang dilaporkan, termasuk jabatan, serta satuan kerja atau pengadilan tempat terlapor bertugas;</li>
+                                    <li>Perbuatan yang dilaporkan;</li>
+                                    <li>Nomor perkara, apabila perbuatan yang diadakan berkaitan dengan pemeriksaan suatu perkara; dan</li>
+                                    <li>Menyertakan bukti atau keterangan yang dapat mendukung pengaduan yang disampaikan. Bukti atau keterangan ini termasuk nama, alamat dan nomor kontak pihak lain yang dapat dimintai keterangan lebih lanjut untuk memperkuat pengaduan Pelapor.</li>
+                                </ul>
+                            </li>
+                            <li>Pelapor sedapat mungkin diharuskan untuk mencantumkan identitasnya. Namun demikian selama dalam informasi dalam pengaduan yang disampaikan benar dan memiliki dasar yang kuat, pengaduan yang tidak mencantumkan identitas akan tetap ditindaklanjuti oleh Mahkamah Agung.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>Tata Cara Pengiriman</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Pengaduan ditujukan kepada:
+                                <ul>
+                                    <li>Ketua atau Wakil Ketua pada Pengadilan Tingkat Pertama atau Pengadilan Tingkat Banding di mana Terlapor bertugas; atau</li>
+                                    <li>Ketua Wakil Ketua Mahkamah Agung Bidang Non Yudisial, atau Ketua Muda Pengawasan dengan tembusan kepada Kepala Badan Pengawasan.</li>
+                                </ul>
+                            </li>
+                            <li>Apabila pengaduan dikirimkan melalui pos dalam amplop tertutup, maka harus disebutkan secara jelas bahwa isi amplop tersebut adalah pengaduan dengan menuliskan kata "PENGADUAN pada Pengadilan" pada bagian kiri atas muka amplop.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>Jika Anda ingin memasukkan pengaduan melalui Pengadilan Negeri Cibinong, silahkan masukkan/kirimkan pengaduan anda ke:Kantor Pengadilan Negeri Cibinong, Jl. Tegar Beriman No. 5 Cibinong Kab. Bogor 16915, Telepon/Fax.Â&nbsp;(021)87305154 / (021)87905153atau dengan mempergunakanÂ&nbsp;<a href="http://pn-cibinong.go.id/index.php/layanan-publik/pengaduan/formulir-pengaduan-online/form/1">Formulir Pengaduan Online</a>Â&nbsp;kami atau mempergunakanÂ&nbsp;<a href="https://www.mahkamahagung.go.id/di_web3/index.asp" target="_blank" rel="noreferrer noopener">Sistem Online Layanan Pengaduan Mahkamah Agung RI</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>Hak-hak Pelapor</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Mendapatkan perlindungan kerahasiaan identitasnya;</li>
+                            <li>Mendapatkan kesempatan untuk dapat memberikan keterangan secara bebas tanpa paksaan dari pihak manapun;</li>
+                            <li>Mendapatkan informasi mengenai tahapan laporan pengaduan yang didaftarkannya;</li>
+                            <li>Mendapatkan perlakuan yang sama dan setara dengan Terlapor dalam pemeriksaan.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>Hak-hak Terlapor</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Membuktikan bahwa ia tidak bersalah dengan mengajukan saksi dan alat bukti lain;</li>
+                            <li>Meminta Berita Acara Pemeriksaan (BAP) dirinya.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>Hak-hak Mahkamah Agung dan Badan Peradilan</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Merahasiakan kesimpulan dan rekomendasi Laporan Hasil Pemeriksaan (LHP) kepada pihak Terlapor, Pelapor, dan pihak-pihak lain selain kepada pejabat yang berwenang mengambil keputusan;</li>
+                            <li>Menentukan jangka waktu yang memadai untuk menangani suatu pengaduan berdasarkan tingkat kesulitan penanganan dalam hal jangka waktu yang ditetapkan dalam pedoman ini terlampaui.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>Selengkapnya:</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list -->
+                        <ul>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5ST0VxcGJHeDJxQTQ/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Keputusan Ketua Mahkamah Agung RI Nomor 076/KMA/SK/VI/2009 tentang Pedoman Pelaksanaan Penanganan Pengaduan di Lingkungan Lembaga Peradilan</a></li>
+                        </ul>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>Khusus untuk aparatur Mahkamah Agung RI dan Badan Peradilan di bawahnya, pengaduan dapat disampaikan melalui layanan pesan singkat (SMS) berisi uraian singkat mengenai hal yang dilaporkan/diadukan dengan mencantumkan nomor telepon yang dapat dihubungi dan disampaikan kepada Badan Pengawasan Mahkamah Agung RI dengan nomor telepon 085282490900 dengan format: Nama pelapor#NIP#satker#ibukota provinsi#nama terlapor#isi pengaduan.</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>Selengkapnya:</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list -->
+                        <ul>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SaHNBaEtiSjlkR0U/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Keputusan Ketua Mahkamah Agung RI Nomor 216/KMA/SK/XII/2011 tentang Pedoman Penanganan Pengaduan Melalui Layanan Pesan Singkat (SMS)</a></li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="pbp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Panjar Biaya Perkara Perdata</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:image -->
+                        <figure class="wp-block-image"><img src="http://website.pn-painan.go.id/images/20170726_174648.jpg" alt="20170726 174648" /></figure>
+                        <!-- /wp:image -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="prosedurpi" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Prosedur Permohonan Informasi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:paragraph -->
+                        <p>A. Umum</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Prosedur pelayanan informasi di Pengadilan terdiri dari:
+                                <ul>
+                                    <li>prosedur biasa; dan</li>
+                                    <li>prosedur khusus</li>
+                                </ul>
+                            </li>
+                            <li>Prosedur Biasa digunakan dalam hal:
+                                <ul>
+                                    <li>Permohonan disampaikan secara tidak langsung, baik melalui surat atau media elektronik;</li>
+                                    <li>Informasi yang diminta bervolume besar;</li>
+                                    <li>Informasi yang diminta belum tersedia; atau</li>
+                                    <li>Informasi yang diminta adalah informasi yang tidak secara tegas termasuk dalam kategori informasi yang harus diumumkan atau informasi yang harus tersedia setiap saat dan dapat diakses publik atau informasi yang secara tegas dinyatakan sebagai informasi yang rahasia sehingga harus mendapat ijin dan diputuskan oleh Pejabat Pengelola Informasi dan Dokumentasi (PPID).</li>
+                                </ul>
+                            </li>
+                            <li>Prosedur Khusus digunakan dalam hal permohonan diajukan secara langsung dan informasi yang diminta:
+                                <ul>
+                                    <li>Termasuk dalam kategori yang wajib diumumkan;</li>
+                                    <li>Termasuk dalam kategori informasi yang dapat diakses publik dan sudah tercatat dalam Daftar Informasi Publik dan sudah tersedia (misal: sudah diketik atau sudah diterima dari pihak atau pengadilan lain);</li>
+                                    <li>Tidak bervolume besar (jumlahnya tidak banyak); dan atau</li>
+                                    <li>Perkiraan jumlah biaya penggandaan dan waktu yang dibutuhkan untuk penggandaan dapat dilakukan dengan mudah.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>B. Prosedur Biasa</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>Pelayanan informasi dengan menggunakan prosedur biasa dilakukan sesuai dengan skema alur dalam gambar berikut:</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:image -->
+                        <figure class="wp-block-image"><img src="http://pn-palopo.go.id/images/pros_bias.jpg" alt="pros bias" /></figure>
+                        <!-- /wp:image -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Pemohon mengisi Formulir Permohonan Informasi yang disediakan Pengadilan dan memberikan salinannya kepada Pemohon.</li>
+                            <li>Petugas Informasi mengisi Register Permohonan.</li>
+                            <li>Petugas Informasi langsung meneruskan formulir permohonan kepada Penanggungjawab Informasi di unit terkait, apabila informasi yang diminta tidak termasuk informasi yang aksesnya membutuhkan ijin dari PPID.</li>
+                            <li>Petugas Informasi langsung meneruskan formulir permohonan kepada PPID apabila informasi yang diminta termasuk informasi yang aksesnya membutuhkan ijin dari PPID guna dilakukan uji konsekuensi.</li>
+                            <li>PPID melakukan uji konsekuensi berdasarkan Pasal 17 Undang-Undang Keterbukaan Informasi Publik terhadap permohonan yang disampaikan.</li>
+                            <li>Dalam jangka waktu 5 (lima) hari kerja sejak menerima permohonan, PPID menyampaikan pemberitahuan tertulis kepada Petugas Informasi, dalam hal permohonan ditolak;</li>
+                            <li>Dalam jangka waktu 5 (lima) hari kerja sejak menerima permohonan, PPID meminta Penanggungjawab Informasi di unit terkait untuk mencari dan memperkirakan biaya penggandaan dan waktu yang diperlukan untuk menggandakan informasi yang diminta dan menuliskannya dalam Pemberitahuan Tertulis PPID Model B dalam waktu selama-lamanya 3 (tiga) hari kerja serta menyerahkannya kembali kepada PPID untuk ditandatangani, dalam hal permohonan diterima.</li>
+                            <li>Petugas Informasi menyampaikan Pemberitahuan Tertulis sebagaimana dimaksud butir 6 atau butir 7 kepada Pemohon Informasi selambat-lambatnya dalam waktu 1 (satu) hari kerja sejak pemberitahuan diterima.</li>
+                            <li>Petugas Informasi memberikan kesempatan bagi Pemohon apabila ingin melihat terlebih dahulu informasi yang diminta, sebelum memutuskan untuk menggandakan atau tidak informasi tersebut.</li>
+                            <li>Dalam hal Pemohon memutuskan untuk memperoleh fotokopi informasi tersebut, Pemohon membayar biaya perolehan informasi kepada Petugas Informasi dan Petugas Informasi memberikan tanda terima.</li>
+                            <li>Dalam hal informasi yang diminta tersedia dalam dokumen elektronik (softcopy), Petugas Informasi pada hari yang sama mengirimkan informasi tersebut ke email Pemohon atau menyimpan informasi tersebut ke alat penyimpanan dokumen elektronik yang disediakan oleh Pemohon tanpa memungut biaya.</li>
+                            <li>Petugas informasi menggandakan (fotokopi) informasi yang diminta dan memberikan informasi tersebut kepada Pemohon sesuai dengan waktu yang termuat dalam Pemberitahuan Tertulis atau selambat-lambatnya dalam jangka waktu 2 (dua) hari kerja sejak Pemohon membayar biaya perolehan informasi.</li>
+                            <li>Pengadilan dapat memperpanjang waktu sebagaimana dimaksud butir 12 selama 1 (satu) hari kerja apabila diperlukan proses pengaburan informasi dan selama 3 (tiga) hari kerja jika informasi yang diminta bervolume besar.</li>
+                            <li>Untuk pengadilan di wilayah tertentu yang memiliki keterbatasan untuk mengakses sarana fotokopi, jangka waktu sebagaimana dimaksud dalam butir 12, dapat diperpanjang selama paling lama 3 (tiga) hari kerja.</li>
+                            <li>Setelah memberikan fotokopi informasi, Petugas Informasi meminta Pemohon menandatangani kolom penerimaan informasi dalam Register Permohonan.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>C. Prosedur Khusus</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>Proses pelayanan informasi dengan menggunakan prosedur khusus, mengikuti skema alur dalam gambar berikut:</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:image -->
+                        <figure class="wp-block-image"><img src="http://pn-palopo.go.id/images/pros_khus.jpg" alt="pros khus" /></figure>
+                        <!-- /wp:image -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Pemohon mengisi formulir permohonan yang disediakan Pengadilan.</li>
+                            <li>Petugas Informasi mengisi Register Permohonan.</li>
+                            <li>Petugas Informasi dibantu Penanggungjawab Informasi di unit terkait mencari informasi yang diminta oleh Pemohon dan memperkirakan biaya perolehan informasi dan waktu yang dibutuhkan untuk penggandaannya.</li>
+                            <li>Apabila informasi yang diminta telah tersedia dan tidak memerlukan ijin PPID, Petugas Informasi menuliskan keterangan mengenai perkiraan biaya perolehan informasi dan waktu yang dibutuhkan untuk penggandaannya dalam formulir permohonan yang telah diisi Pemohon.</li>
+                            <li>Proses untuk pembayaran, penyalinan dan penyerahan salinan informasi kepada Pemohon dalam Prosedur Khusus, sama dengan yang diatur untuk Prosedur Biasa dalam butir 10 sampai dengan butir 15.</li>
+                            <li>Petugas Informasi memberikan kesempatan bagi Pemohon apabila ingin melihat terlebih dahulu informasi yang diminta, sebelum memutuskan untuk menggandakan atau tidak informasi tersebut.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>D. Biaya Perolehan Informasi</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Biaya perolehan informasi dibebankan kepada Pemohon.</li>
+                            <li>Biaya perolehan informasi sebagaimana dimaksud butir 1 terdiri atas biaya penggandaan (misalnya fotokopi) informasi yang dimohonkan serta biaya transportasi untuk melakukan penggandaan tersebut.</li>
+                            <li>Biaya penggandaan sebagaimana dimaksud butir 2 adalah biaya riil yang ditetapkan oleh penyedia jasa pelayanan penggandaan.</li>
+                            <li>Atasan PPID menetapkan biaya riil transportasi untuk melakukan penggandaan informasi sebagaimana dimaksud butir 2 dengan memperhatikan kondisi wilayah, dalam hal biaya tersebut diperlukan (misalnya lokasi penyedia jasa pelayanan penggandaan jauh dari Pengadilan).</li>
+                            <li>Terhadap permohonan informasi mengenai penggandaan putusan atau penetapan tidak dikenakan biaya leges karena yang dapat diberikan kepada pemohon bukan merupakan salinan resmi.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>E. Syarat dan Prosedur Pengajuan Keberatan atas Pelayanan Permintaan Informasi</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Pemohon berhak mengajukan keberatan dalam hal ditemukannya alasan sebagai berikut:Keberatan ditujukan kepada Atasan PPID melalui Petugas Informasi oleh Pemohon atau kuasanya.Keberatan ditujukan kepada Atasan PPID melalui Petugas Informasi oleh Pemohon atau kuasanya.Keberatan ditujukan kepada Atasan PPID melalui Petugas Informasi oleh Pemohon atau kuasanya.Keberatan ditujukan kepada Atasan PPID melalui Petugas Informasi oleh Pemohon atau kuasanya.
+                                <ul>
+                                    <li>Adanya penolakan atas permohonan informasi;</li>
+                                    <li>Tidak disediakannya informasi yang wajib diumumkan secara berkala;</li>
+                                    <li>Tidak ditanggapinya permohonan informasi;</li>
+                                    <li>Permohonan ditanggapi tidak sebagaimana yang diminta;</li>
+                                    <li>Tidak dipenuhinya permohonan informasi;</li>
+                                    <li>Pengenaan biaya yang tidak wajar; dan/atau</li>
+                                    <li>Penyampaian informasi melebihi waktu yang diatur dalam Pedoman ini.</li>
+                                </ul>
+                            </li>
+                            <li>Keberatan ditujukan kepada Atasan PPID melalui Petugas Informasi oleh Pemohon atau kuasanya.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>F. Registrasi Pengajuan Keberatan atas Pelayanan Permintaan Informasi</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Petugas Informasi wajib memberikan formulir keberatan kepada pemohon untuk diisi dan membantu pengisiannya jika diperlukan.</li>
+                            <li>Petugas Informasi langsung memberikan salinan formulir keberatan sebagai tanda terima pengajuan keberatan.</li>
+                            <li>Petugas Informasi wajib mencatat pengajuan keberatan dalam register keberatan dan meneruskannya kepada atasan PPID dengan tembusan kepada PPID dalam waktu selambat-lambatnya 2 (dua) hari kerja sejak permohonan diajukan.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>G. Tanggapan atas Keberatan</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list {"ordered":true} -->
+                        <ol>
+                            <li>Atasan PPID wajib memberikan tanggapan dalam bentuk keputusan tertulis yang disampaikan kepada Petugas PPID dengan tembusan kepada PPID selambat-lambatnya dalam waktu 20 (dua puluh) hari sejak dicatatnya pengajuan keberatan tersebut dalam register keberatan.</li>
+                            <li>Keputusan tertulis sebagaimana dimaksud sekurang-kurangnya memuat:Petugas Informasi menyampaikan atau mengirimkan keputusan Atasan PPID kepada Pemohon atau kuasanya selambat-lambatnya dalam waktu 2 (dua) hari kerja sejak menerima tanggapan dari Atasan PPID dan ditembuskan ke PPID serta Biro Hukum dan Hubungan Masyarakat Mahkamah Agung.Petugas Informasi menyampaikan atau mengirimkan keputusan Atasan PPID kepada Pemohon atau kuasanya selambat-lambatnya dalam waktu 2 (dua) hari kerja sejak menerima tanggapan dari Atasan PPID dan ditembuskan ke PPID serta Biro Hukum dan Hubungan Masyarakat Mahkamah Agung.Petugas Informasi menyampaikan atau mengirimkan keputusan Atasan PPID kepada Pemohon atau kuasanya selambat-lambatnya dalam waktu 2 (dua) hari kerja sejak menerima tanggapan dari Atasan PPID dan ditembuskan ke PPID serta Biro Hukum dan Hubungan Masyarakat Mahkamah Agung.
+                                <ul>
+                                    <li>Tanggal pembuatan surat tanggapan atas keberatan;</li>
+                                    <li>Nomor surat tanggapan atas keberatan;</li>
+                                    <li>Tanggapan/jawaban tertulis atasan PPID atas keberatan yang diajukan yang berisi salah satu atau beberapa hal sebagai berikut:
+                                        <ul>
+                                            <li>Mendukung sikap atau putusan PPID disertai alasan dan pertimbangan yang jelas;</li>
+                                            <li>Membatalkan putusan PPID dan/atau memerintahkan PPID untuk memberikan sebagian atau seluruh informasi yang diminta kepada Pemohon dalam jangka waktu tertentu selambat-lambatnya 14 (empat belas) hari kerja;</li>
+                                            <li>Memerintahkan PPID untuk menjalankan kewajibannya dalam memberikan pelayanan informasi sesuai dengan undang-undang dan peraturan yang berlaku dalam jangka waktu tertentu selambat-lambatnya 14 (empat belas) hari kerja;</li>
+                                            <li>Menetapkan biaya yang wajar yang dapat dikenakan kepada pemohon informasi.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Petugas Informasi menyampaikan atau mengirimkan keputusan Atasan PPID kepada Pemohon atau kuasanya selambat-lambatnya dalam waktu 2 (dua) hari kerja sejak menerima tanggapan dari Atasan PPID dan ditembuskan ke PPID serta Biro Hukum dan Hubungan Masyarakat Mahkamah Agung.</li>
+                            <li>Pemohon yang mengajukan keberatan yang tidak puas dengan keputusan atasan PPID berhak mengajukan permohonan penyelesaian sengketa informasi kepada Komisi Informasi selambat-lambatnya 14 (empat belas) hari kerja sejak diterimanya keputusan atasan PPID.</li>
+                        </ol>
+                        <!-- /wp:list -->
+                        <!-- wp:paragraph -->
+                        <p>Selengkapnya:</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:list -->
+                        <ul>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SOHZZR2dFbjNuVGM/edit?usp=sharing" target="_blank" rel="noreferrer noopener">SK KMA Nomor 1-144/KMA/SK/I/2011 tentang Pedoman Pelayanan Informasi di Pengadilan</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SQ3JzamF0dVppQ3M/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran I SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SNWRFckFDeU45RE0/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran II SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SYVhvWWp5MWpQR00/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran III SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5ScHEzbnA4TGd1N3c/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran IV SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SM09LaW5kTEFFT1U/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran V SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SdFFNQWdUNGIwYVk/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran VI SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SbmhYNWhpMXVjeU0/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran VII SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SZGdfa1ZseGh5Vnc/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran VIII SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SV3dIa1ZPOG53SU0/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran IX SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5STDlZQ1RlR2F5eEk/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran X SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5Sd1pzQ0JmZllSdGM/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran XI SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                            <li><a href="https://drive.google.com/file/d/0B_MTiTb_El5SNFI0Si1ndnBNNTg/edit?usp=sharing" target="_blank" rel="noreferrer noopener">Lampiran XII SK KMA No. 1-144/KMA/SK/I/2011</a></li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+    <div class="modal fade" id="etilang" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Informasi denda tilang</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:heading {"level":1} -->
+                        <h1>Daftar Pelanggar Lalu Lintas dan Angkutan Jalan (Tilang)</h1>
+                        <!-- /wp:heading -->
+                        <!-- wp:paragraph -->
+                        <p>Pengantar Sidang Lalu Lintas dapat di unduh di bawah ini</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>05 Mei 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/images/pdf_file/tilang/05mei2017.pdf" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>28 April 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/index.php/features/informasi-denda-tilang" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>21 April 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/index.php/features/informasi-denda-tilang" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>14 April 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/index.php/features/informasi-denda-tilang" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>07 April 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/index.php/features/informasi-denda-tilang" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>24 Maret 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/index.php/features/informasi-denda-tilang" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>17 Maret 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/index.php/features/informasi-denda-tilang" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>10 Maret 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/images/pdf_file/tilang/10maret2017.pdf" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>03 Maret 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/index.php/features/informasi-denda-tilang" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>24 Februari 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/index.php/features/informasi-denda-tilang" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>17 Februari 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/index.php/features/informasi-denda-tilang" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>10 Februari 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/images/pdf_file/tilang/10feb2017.pdf" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>03 Februari 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <a href="http://website.pn-painan.go.id/images/pdf_file/tilang/03feb2017.pdf" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>27 Januari 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/images/pdf_file/tilang/27Januari2017.pd" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>20 Januari 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/index.php/features/informasi-denda-tilang" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>13 Januari 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/images/pdf_file/tilang/13Januari2017.pdf" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>06 Januari 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://website.pn-painan.go.id/index.php/features/informasi-denda-tilang" target="_blank" rel="noreferrer noopener">Unduh PDF</a></p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="smscenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Informasi Perkara Melalui SMS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <h2>SMS CENTER</h2>
+                        <br>
+                        <p>Pengadilan Negeri Painan saat ini menghadirkan layanan informasi melalui SMS yang memungkinkan masyarakat maupun para pihak yang berperkara dapat memperoleh informasi terkini mengenai status/proses perkara, jadwal sidang, biaya perkara, dan pengaduan kapan saja dan dimana saja.</p>
+                        <br>
+                        <p>Dengan mengirimkan pesan singkat sesuai format tertentu ke nomor SMS Center Pengadilan Negeri Painan yaitu 082384691013, masyarakat maupun para pihak yang berperkara dapat mengetahui status perkara yang sedang berjalan, jadwal sidang suatu perkara, dan besarnya biaya (untuk perkara perdata) yang harus dibayar serta Bagi Masyarakan yang Berperkara Tilang juga dapat informasi di sms center Pengadilan Negeri Painan. Selain itu, masyarakat maupun para pihak yang berperkara juga dapat mengirimkan pesan singkat dengan format bebas untuk mengajukan pertanyaan/pengaduan lainnya atau menyampaikan saran dan keluhan terkait pelayanan publik di ruang lingkup Pengadilan Negeri Blitar.</p>
+                        <br>
+                        <p>Hal ini merupakan bentuk nyata Pengadilan Negeri Painan dalam mewujudkan Undang-Undang No. 14 tahun 2008 tentang Keterbukaan Informasi Publik. Undang-Undang No. 14 tahun 2008 tentang Keterbukaan Informasi Publik merupakan salah satu produk hukum Indonesia yang dikeluarkan dalam tahun 2008 dan diundangkan pada tanggal 30 April 2008 dan mulai berlaku dua tahun setelah diundangkan. Undang-undang yang terdiri dari 64 pasal ini pada intinya memberikan kewajiban kepada setiap Badan Publik untuk membuka akses bagi setiap masyarakat pemohon informasi publik untuk mendapatkan informasi publik, kecuali beberapa informasi tertentu.</p>
+                        <br>
+                        <!-- wp:paragraph -->
+                        <p><strong>Format SMS:</strong>
+                            <br>Format SMS untuk melihat informasi status/proses perkara yang sedang berjalan.
+                            <br>ketik: PERKARA#NOMOR_PERKARA
+                            <br>contoh: PERKARA#1/G/2017</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>Format SMS untuk melihat informasi jadwal sidang terkini suatu perkara.
+                            <br>ketik: JADWAL#NOMOR_PERKARA
+                            <br>contoh: JADWAL#1/G/2017</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>Format SMS untuk melihat biaya perkara (khusus untuk perkara perdata).
+                            <br>ketik: BIAYA#NOMOR_PERKARA
+                            <br>contoh: BIAYA#1/G/2017</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>FORMAT SMS PERDATA :
+                            <br>1/G/2017 -&gt; Gugatan
+                            <br>1/P/201 -&gt; Permohonan
+                            <br>1/Bth/2017 -&gt; Perdata Bantahan
+                            <br>1/G.S/2017 -&gt; Gugatan Sederhana</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>FORMAT SMS PIDANA :
+                            <br>1/B/2017 -&gt; Biasa
+                            <br>1/C/2017 -&gt; Cepat
+                            <br>1/LL/2017 -&gt; Lalu lintas
+                            <br>1/Pra/2017 -&gt; Pra Peradilan
+                            <br>1/Sus-Anak/2017 -&gt; Pidana Anak</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>FORMAT SMS TILANG :</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>TILANG#NO REGISTER TILANG</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>CONTOH :</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>TILANG#C2405744</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>
+                            <br>SMS ADUAN :
+                            <br>LAPOR#NAMA#ALAMAT#ISILAPOR</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>CONTOH :
+                            <br>LAPOR#Adi Sumarmo#Painan#Test Laporan</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p>Informasi lainnya
+                            <br>ketik: info yang diinginkan
+                            <br>contoh: bagaimana cara mengajukan perkara perdata gugatan?</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:paragraph -->
+                        <p><strong>Ketentuan:</strong>
+                            <br>Pengirim SMS dikenakan tarif sesuai tarif sms normal yang berlaku di masing-masing operator telekomunikasi yang digunakan. Pengirim SMS tidak dikenakan tarif ketika menerima SMS balasan dari Pengadilan Negeri Painan. Huruf besar maupun kecil tidak berpengaruh, format penulisan nomor perkara harus sesuai dengan contoh.</p>
+                        <!-- /wp:paragraph -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- carousel berita utama -->
+    <div id="carouselExampleControls" class="carousel slide bs-slider box-slider" data-ride="carousel" data-pause="hover" data-interval="false">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="3"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="4"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="5"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="6"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="7"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="8"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="9"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="10"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="11"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <div id="home" class="first-section" style="background-color: red">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-right">
+                                    <div class="big-tagline">
+                                        <h2><strong class="halo" style="font-family: Arial">Selamat Datang! </strong>di Website Resmi Pengadilan Negeri Painan</h2>
+                                        <p class="lead">Puji syukur ke hadirat Allah, atas peluncuran situs resmi Pengadilan Negeri Painan dengan alamat www.pn-painan.go.id sebagai implementasi dari SK Ketua Mahkamah Agung Republik Indonesia Nomor : 144/SK/KMA/VIII/2007 tanggal 28 Agustus 2007 tentang Keterbukaan Informasi di Pengadilan.</p>
+                                        <a data-toggle="modal" data-target="#pkp" class="hover-btn-new orange"><span>Pengantar Ketua Pengadilan</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </div>
+                <!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image:url('images/slider-02.png');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-left">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight"><strong>E-Court</strong></h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">adalah layanan bagi Pengguna Terdaftar untuk Pendaftaran Perkara Secara Online, Mendapatkan Taksiran Panjar Biaya Perkara secara online, Pembayaran secara online, Pemanggilan yang dilakukan dengan saluran elektronik, dan Persidangan yang dilakukan secara Elektronik</p>
+                                        <a href="https://ecourt.mahkamahagung.go.id/" class="hover-btn-new"><span>Masuk</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </div>
+                <!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image:url('images/siwas.jpg');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight"><strong>Siwas</strong> SISTEM INFORMASI PENGAWASAN</h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">aplikasi yang disediakan oleh Badan Pengawasan Mahkamah Agung RI, untuk melaporkan suatu perbuatan berindikasi pelanggaran yang terjadi di lingkungan Mahkamah Agung Republik Indonesia atau Peradilan dibawahnya." Badan Pengawasan Mahkamah Agung RI menghargai informasi yang Anda laporkan karena Fokus kami adalah materi informasi yang Anda Laporkan. "Penanganan Whistleblowing tidak melayani pengaduan yang berkaitan dengan masalah perkara."</p>
+                                        <a href="https://siwas.mahkamahagung.go.id/" class="hover-btn-new"><span>Masuk</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </div>
+                <!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image:url('images/sms.png');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight">Informasi perkara melalui <strong>SMS</strong></h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">aplikasi yang disediakan oleh Badan Pengawasan Mahkamah Agung RI, untuk melaporkan suatu perbuatan berindikasi pelanggaran yang terjadi di lingkungan Mahkamah Agung Republik Indonesia atau Peradilan dibawahnya." Badan Pengawasan Mahkamah Agung RI menghargai informasi yang Anda laporkan karena Fokus kami adalah materi informasi yang Anda Laporkan. "Penanganan Whistleblowing tidak melayani pengaduan yang berkaitan dengan masalah perkara."</p>
+                                        <a data-toggle="modal" data-target="#smscenter" class="hover-btn-new"><span>Baca Prosedurnya</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </div>
+                <!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image:url('images/etilang.png');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight"> <strong>E-tilang</strong></h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">Dapatkan informasi tentang denda tilang melalui SIPP (Sistem informasi Penelusuran perkara)</p>
+                                        <a href="http://sipp.pn-painan.info/list_perkara/type/Mm1xOTNHMG1ZV0F0MHg1czdCWHFZM0RUN1NhK0cxN3hPSXZKeE9UcFNDNTNwaHcySno5ZFQrZForOUZhV1ljMzJIYlViYmd1M3dJc0FZb3kzUGo2WGc9PQ==" class="hover-btn-new"><span>Lihat disini</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </div>
+                <!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image:url('images/simpeg.jpg');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight"> <strong>E-Simpeg</strong></h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">SIMPEG PN-PAINAN adalah aplikasi yang disediakan pengadilan negeri painan yang dibuat dan di kembangkan oleh admin IT Pengadilan Negeri Painan sebagai bentuk Inovasi di bidang Kesektariatan yang hanya dapat diakses oleh karyawan/ti pengadilan negeri painan untuk mempermudah akses dan pengumpulan data pegawai pengadilan negeri Painan </p>
+                                        <a href="http://simpeg.pn-painan.info/" class="hover-btn-new"><span>Masuk</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </div>
+                <!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image:url('images/eraterang.png');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight"> <strong>E-Raterang</strong></h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">Merupakan media elektronik dalam memberikan pelayanan permohonan Surat Keterangan pada Pengadilan Negeri</p>
+                                        <a href="https://eraterang.badilum.mahkamahagung.go.id/masuk" class="hover-btn-new"><span>Masuk</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </div>
+                <!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image:url('images/pesona.jpg');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight"> <strong>PENGADILAN NEGERI PAINAN - NEGERI SEJUTA PESONA</strong></h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">Daerah Pesisir Selata Menyimpan Berjuta Keindahan Alam, Panorama dan Masyarakatnya yang ramah.</p>
+                                        <a href="https://www.pesisirselatankab.go.id/pariwisata/kategori/wisata-alam/1" class="hover-btn-new"><span>Kunjungi Laman</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </div>
+                <!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image:url('images/posbakum.jpg');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight"> <strong>Posbakum</strong></h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">Bebas biaya perkara bagi yang tidak mampu. Anda yang kurang mampu berhak mendapatkan layanan bantuan hukum secara cuma-cuma. Gunakan hak anda untuk memanfaatkan POSBAKUM</p>
+                                        <a data-toggle="modal" data-target="#e" class="hover-btn-new"><span>Baca prosedur</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </div>
+                <!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image:url('images/sipp.jpg');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight"> <strong>SIPP</strong></h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">Sistem Informasi Penelusuran Perkara adalah aplikasi resmi dari Mahkamah Agung Republik Indonesia untuk membantu para pencari keadilan dalam monitoring proses penyelesaian perkara yang ada di Pengadilan Negeri Painan</p>
+                                        <a href="http://sipp.pn-painan.go.id/" class="hover-btn-new"><span>Masuk SIPP</span></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </div>
+                <!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image:url('images/thanks.jpg');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight"> <strong>Selamat!</strong></h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">Yml. DR. H.M. Syarifuddin, Ali S.H, M.H atas terpilihnya sebagai Ketua Mahkamah RI Periode 2020-2025, Semoga amanah dalam melaksanakan tugas. Terimakasi yang Tak Terhingga kami ucapkan Kepada Yml. Prof. Dr. H.H Hatta Ali S.H, M.H atas pengabadiannya selama ini untuk negara terkhusus kemajuan lembaga mahkamah </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end row -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </div>
+                <!-- end section -->
+            </div>
+            <!-- Left Control -->
+            <div class="controller">
+                <a class="new-effect carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="fa fa-angle-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </div>
+            <!-- Right Control -->
+            <div class="controller">
+                <a class="new-effect carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="fa fa-angle-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="overviews" class="section wb">
+        <div class="container">
+            <div class="section-title row text-center">
+                <!-- Button trigger modal -->
+                <center>
+                    <div>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            Informasi Cepat
+                        </button>
+                    </div>
+                </center>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Informasi Cepat</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div style="text-align: left">
+                                    <b>Sistem peradilan anak</b>
+                                    <br>
+                                    <ul>
+                                        <li><a href="blog/materisosialisasispa/index.html">Materi Sosialisasi SPPA</a></li>
+                                        <li><a href="blog/saranaprasaranasppa/index.html">Sarana Prasarana SPPA</a></li>
+                                        <li><a href="blog/skemaalurdiversi/index.html">Skema Alur Diversi</a></li>
+                                        <li><a href="http://www.badilum.info/upload_file/img/article/doc/PERMA_04_2014.pdf">Peraturan-Peraturan</a></li>
+                                    </ul>
+                                    <br>
+                                    <b>Mediasi</b>
+                                    <br>
+                                    <ul>
+                                        <li><a href="blog/peraturanperaturan/index.html">Materi Mediasi</a></li>
+                                        <li><a href="">Daftar Mediator</a></li>
+                                        <li><a href="https://www.youtube.com/watch?v=-UpFZ5Oehmo#action=share">Video Mediasi</a></li>
+                                    </ul>
+                                    <br>
+                                    <b>Sistem Informasi delegasi</b>
+                                    <br>
+                                    <ul>
+                                        <li><a href="blog/formulirdelegasimasuk/index.html">Formulir Delegasi masuk</a></li>
+                                    </ul>
+                                    <br>
+                                    <b><a href="https://kepaniteraan.mahkamahagung.go.id/perkara/?txtRegister=&txtPengadilan=&txtPihak=&txtJenisPerkara=&txtSuratPengantar=w11.u20&txtPutusanGuid=&cmdSearch=Cari">Informasi perkara kasasi/PK</a></b>
+                                    <br>
+                                    <!--  -->
+                                    <b>Prosedur berperkara pidana</b>
+                                    <br>
+                                    <ul>
+
+                                      <li><a href="blog/penerimaanperkarapidanabiasa/index.html">Penerimaan perkara pidana biasa</a></li>
+                                      <li><a href="blog/pemeriksaanperkarapidanadenganacarabiasa/index.html">Pemeriksaan Perkara pidana dengan acara biasa</a></li>
+                                      <li><a href="blog/pemeriksaanperkarapidanadenganacaracepat/index.html">Pemeriksaan Perkara pidana dengan acara cepat</a></li>
+                                      <li><a href="blog/pemeriksaanperkarapidanadenganacarasingkat/index.html">Pemeriksaan Perkara pidana dengan acara singkat</a></li>
+                                      <li><a href="blog/penggeledahan/index.html">Penggeledahan</a></li>
+                                      <li><a href="blog/penyitaan/index.html">Penyitaan</a></li>
+                                      <li><a href="blog/penahanandanperpanjanganpenahanan/index.html">penahanan dan Perpanjangan Penahanan</a></li>
+                                      <li><a href="blog/pengadilananak/index.html">Pengadilan Anak</a></li>
+                                      <li><a href="blog/praperadilan/index.html">Pra peradilan</a></li>
+                                    </ul>
+                                    <br>
+                                    <b>Prosedur berperkara perdata</b>
+                                    <br>
+                                    <ul>
+
+                                        <li><a href="blog/prosedurpendaftarangugatan/index.html">Prosedur pendaftaran gugatan</a></li>
+                                        <li><a href="blog/prosedurpengajuanpermohonan/index.html">Prosedur pengajuan Permohonan</a></li>
+                                        <li><a href="blog/gugatanperwakilankelompok/index.html">Gugatan Perwakilan Kelompok</a></li>
+                                        <li><a href="blog/gugatanuntukkepentinganumum/index.html">Gugatan untuk kepentingan umum</a></li>
+                                        <li><a href="blog/sitajaminanterhadapbarangmiliktergugat/index.html">Sita jaminan terhadap barang milik tergugat</a></li>
+                                        <li><a href="blog/sitajaminanterhadapbarangmilikpenggugat/index.html">Sita jaminan terhadap barang milik penggugat</a></li>
+                                        <li><a href="blog/sitapersamaan/index.html">Sita persamaan</a></li>
+                                        <li><a href="blog/sitamarital/index.html">Sita marital</a></li>
+                                        <li><a href="blog/sitaeksekusi/index.html">Sita eksekusi</a></li>
+                                        <li><a href="blog/eksekusiputusanincranch/index.html">Eksekusi Putusan incrach</a></li>
+                                        <li><a href="blog/ekseskusijaminan/index.html">Eksekusi jaminan</a></li>
+                                        <li><a href="blog/eksekusigrosseakta/index.html">Eksekusi grosse akta</a></li>
+                                        <li><a href="blog/eksekusihaktanggungan/index.html">Eksekusi hak tanggungan</a></li>
+                                        <li><a href="blog/prosedurgugatansederhana/index.html">Prosedur gugatan sederhana</a></li>
+                                    </ul>
+                                    <br>
+                                    <b>Prosedur berupaya hukum</b>
+                                    <br>
+                                    <ul>
+                                        <li><a href="blog/prosedurperkarapidanabanding/index.html">Prosedur perkara pidana banding</a></li>
+                                        <li><a href="blog/prosedurperkaraperdatabanding/index.html">Prosedur perkara perdata banding</a></li>
+                                        <li><a href="blog/prosedurperkarapidanakasasi/index.html">Prosedur perkara pidana kasasi</a></li>
+                                        <li><a href="blog/prosedurperkaraperdatakasasi/index.html">Prosedur perkara perdata kasasi</a></li>
+                                        <li><a href="blog/prosedurpeninjauankembali/index.html">Prosedur peninjauan kembali</a></li>
+                                    </ul>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <br>
+                <div id="keterbukaan-informasi" class="col-md-8 offset-md-2" style="letter-spacing: 2px">
+                    <h3 style="color: #000;font-weight: bolder;">Keterbukaan Informasi</h3>
+                    <p class="lead" style="text-align: center;color: #000"><span>Silakan Hubungi Pengadilan Negeri Painan. Kami akan melayani para pencari keadilan dengan sepenuh hati</span></p>
+                </div>
+            </div>
+            <!-- end title -->
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="message-box">
+                        <h4>Hmmmmmm...?</h4>
+                        <h2 style="color: red;font-weight: bolder ">Prosedur Berperkara</h2>
+                        <p style="letter-spacing: 1px;text-align: justify;color: #000">Anda bingung bagaimana berperkara di pengadilan? Silakan membaca bagaimana prosedur berperkara dan biaya berperkara yang berlaku saat ini.</p>
+                        <a data-toggle="modal" data-target="#prosedur-berperkara" class="hover-btn-new orange"><span>Klik Disini</span></a>
+
+                    </div>
+                    <!-- end messagebox -->
+                </div>
+                <!-- end col -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="post-media wow fadeIn">
+                        <img class="mobile-none" style="width:350px;height:350px" src="images/perkara.png" alt="" class="img-fluid img-rounded">
+                    </div>
+                    <!-- end media -->
+                </div>
+                <!-- end col -->
+            </div>
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="mobile-none post-media wow fadeIn">
+                        <img src="images/putusan.png" style="width:350px;height:350px" alt="" class="img-fluid img-rounded">
+                    </div>
+                    <!-- end media -->
+                </div>
+                <!-- end col -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="message-box">
+                        <h4>One day publish</h4>
+                        <h2 style="color: red;font-weight: bolder ">Direktori Putusan</h2>
+                        <p style="letter-spacing: 1px;text-align: justify;color: #000">Akses untuk publik mengenai salinan elektronik putusan Pengadilan Negeri Painan yang telah diunggah pada Direktori Putusan Mahkamah Agung.</p>
+                        <a href="https://putusan3.mahkamahagung.go.id/pengadilan/profil/pengadilan/pn-painan" class="hover-btn-new orange"><span>Kunjungi Laman</span></a>
+                    </div>
+                    <!-- end messagebox -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end section -->
+    <section id="pengumuman" style="margin-right: 300px;margin-Left:300px;margin-top:100px;margin-bottom:100px">
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <h1 style="color:red;font-weight:bolder">Pengumuman Terkini</h1><hr>
+        <a href="blog\Pengadilan-Negeri-Painan-mendapat-Akreditasi-A-Penjaminan-Mutu-badan-peradilan-umum/index.html"><h1>Pengadilan Negeri Painan mendapat Akreditasi A Penjaminan Mutu badan peradilan umum</h1></a>
+      </div><hr>
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <a href="blog/Pengadilan-Negeri-Painan-Kembali-Memperoleh-Penghargaan-Terbaik-I-Dalam-Kinerja-Pelaksanaan-Anggaran-untuk-Tahun-2017/index.html"><h1>Pengadilan Negeri Painan Kembali Memperoleh Penghargaan Terbaik I Dalam Kinerja Pelaksanaan Anggaran untuk Tahun 2017</h1></a>
+        <p>Painan/12mei2017,,.. Pengadilan Negeri Painan kembali memperoleh Penghargaan dari Kementrian Keuangan melalui kppn Pesisir selatan, Terbaik I kategori Kinerja Pelaksanaan Anggaran, ini adalah Pencapaian yang sangat baik, karena Pengadilan Negeri Painan berhasil mempertahankan gelar terbaik I.</p>
+    <hr>  </div>
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <a href="blog/Pengadilan-Negeri-Painan-Kembali-Memperoleh-Penghargaan-Terbaik-I-Dalam-Kinerja-Pelaksanaan-Anggaran/index.html"><h1>Pengadilan Negeri Painan Kembali Memperoleh Penghargaan Terbaik I Dalam Kinerja Pelaksanaan Anggaran</h1></a>
+        <p>Painan/27Desember2016,,.. Pengadilan Negeri Painan kembali memperoleh Penghargaan dari Kementrian Keuangan melalui kppn Pesisir selatan, Terbaik I kategori Kinerja Pelaksanaan Anggaran, ini adalah Pencapaian yang sangat baik, karena Pengadilan Negeri Painan berhasil mempertahankan gelar terbaik I.</p>
+      <hr></div>
+
+
+
+
+    <br>
+      <a class="berita-hp" href="blog/pengumuman.html" style="margin-left:-270px;background:red;color:#fff;padding:20px;">Pengumuman lainnya..</a>
+      <a class="berita-lainnya" href="blog/pengumuman.html" style="background:red;color:#fff;padding:20px;">Pengumuman Lainnya..</a>
+    </section>
+
+    <section class="section lb page-section" style="background-color: red">
+        <div class="container">
+            <div class="section-title row text-center">
+                <div class="col-md-8 offset-md-2">
+                    <h3 style="color: white;font-weight: bolder;">Informasi</h3>
+                    <p style="color: white;">Berikut adalah Beberapa Lainnya sebagai implementasi dari SK Ketua Mahkamah Agung Republik Indonesia Nomor : 144/SK/KMA/VIII/2007 tanggal 28 Agustus 2007 tentang Keterbukaan Informasi di Pengadilan.</p>
+                </div>
+            </div>
+            <!-- end title -->
+            <div class="timeline">
+                <div class="timeline__wrap">
+                    <div class="timeline__items">
+                        <div class="timeline__item">
+                            <a class="lainnya" data-toggle="modal" data-target="#ppskt">
+                                <div class="timeline__content img-bg-02">
+                                    <h2>PERSYARATAN PERMINTAAN SURAT KETERANGAN TIDAK PERNAH DIHUKUM</h2>
+                                    <p>Anda juga dapat mengajukannya, silahkan klik saja bagian ini untuk membaca persyaratannya</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="timeline__item">
+                            <a class="lainnya" href="http://pn-painan.go.id/ipk/">
+                                <div class="timeline__content img-bg-01">
+                                    <h2>SURVEY INDEKS PERSEPSI KORUPSI</h2>
+                                    <p>Silakan Bapak/ibu Pencari Keadilan meluangkan waktu untuk mengisi kuisioner indeks persepsi korupsi</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="timeline__item">
+                            <a class="lainnya" href="http://sipp.pn-painan.go.id/list_jadwal_sidang">
+                                <div class="timeline__content img-bg-02">
+                                    <h2>JADWAL SIDANG HARI INI</h2>
+                                    <p>Selain dapat dilihat pada Sistem Informasi Penelusuran Perkara, Anda juga dapat melihat jadwal persidangan hari ini</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="timeline__item">
+                            <a class="lainnya" href="http://pn-painan.go.id/ikm/">
+                                <div class="timeline__content img-bg-03">
+                                    <h2>SURVEY KEPUASAN MASYARAKAT</h2>
+                                    <p>Silakan Bapak/ibu Pencari Keadilan memberikan penilaian kepada kami dengan menekan gambar diatas</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="timeline__item">
+                            <a class="lainnya" href="http://sipp.pn-painan.info/">
+                                <div class="timeline__content img-bg-04">
+                                    <h2>PENELUSURAN PERKARA</h2>
+                                    <p>Silahkan melakukan penelusuran serta mengawasi jalannya proses penyelesaian perkara anda secara online pada aplikasi Sistem Informasi Penelusuran Perkara</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="timeline__item">
+                            <a class="lainnya" data-toggle="modal" data-target="#prosedurpi">
+                                <div class="timeline__content img-bg-01">
+                                    <h2>PERMOHONAN INFORMASI</h2>
+                                    <p>Ketua Mahkamah Agung RI pada tanggal 5 Januari 2011 telah menerbitkan Surat Keputusan Nomor 1-144/KMA/SK/I/2011 tentang Pedoman Pelayanan Informasi di Pengadilan untuk memudahkan Anda mengakses informasi di Pengadilan</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="timeline__item">
+                            <a class="lainnya" data-toggle="modal" data-target="#pengaduan">
+                                <div class="timeline__content img-bg-02">
+                                    <h2>PROSEDUR PENGADUAN</h2>
+                                    <p>Syarat dan tata cara pengaduan mengacu pada Lampiran Keputusan Ketua Mahkamah Agung RI No. 076/KMA/SK/VI/2009 tanggal 4 Juni 2009 tentang Pedoman Pelaksanaan Penanganan Pengaduan di Lingkungan Lembaga Peradilan</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="timeline__item">
+                            <a class="lainnya" data-toggle="modal" data-target="#e">
+                                <div class="timeline__content img-bg-03">
+                                    <h2>PROSEDUR BANTUAN HUKUM</h2>
+                                    <p>Mahkamah Agung RI pada tanggal 9 Januari 2014 telah menerbitkan Peraturan Mahkamah Agung Republik Indonesia Nomor 1 Tahun 2014 tentang Pedoman Pemberian Layanan Hukum Bagi Masyarakat Tidak Mampu di Pengadilan Negeri</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kegiatanpn" style="margin-right: 300px;margin-Left:300px;margin-top:100px;margin-bottom:100px">
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <h1 style="color:red;font-weight:bolder">Kegiatan Terkini</h1>
+        <hr>
+        <a href="blog/Giat-Penanaman-Pohon-ketua-Pengadilan-Negeri-Painan-bersama-Kapolres-Pesisir-Selatan/index.html"><h1>Giat Penanaman Pohon ketua Pengadilan Negeri Painan bersama Kapolres Pesisir Selatan</h1></a>
+        <p>Salido,10januari2020,,.. Bapak ketua Pengadilan Negeri Painan M.Fauzan Haryadi,SH.MH Bersama Kapolres Kab. Pesisir Selatan dan Seluruh Jajaran Forkopinda kab.Pesisir Selatan Melaksanakan Kegiatan Penanaman 1800 Pohon, yang di buka di Lapangan polsek IV Jurai Kab. Pesisir Selatan.</p>
+      </div><hr>
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <a href="blog/Pembinaan-ketua-pengadilan-negeri-painan/index.html"><h1>Pembinaan Ketua Pengadilan Negeri Painan (06 Januari 2020) </h1></a>
+        <p>Salido,06januari2020,,.. Pembinaan oleh Bapak Ketua Pengadilan Negeri Painan pada pukul 09.00 Wib. Yang diikuti oleh Hakim, Panitera, Sekretaris para Pegawai serta honorer Pengadilan Negeri Painan (Absensi Rapat Dinas terlampir).
+          dan dilanjutkan pembacaan fakta Integritas yang di wakili oleh :Feryandi, SH dan Dimas Mareska, SH</p>
+      </div><hr>
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <a href="blog/upacara-memperingati-hari-pahlawan-ke-74/index.html"><h1>Upacara Memperingati Hari Pahlawan yang Ke-74 </h1></a> <hr>
+      </div>
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <a href="blog/pengambilan-sumpah-jabatan/index.html"><h1>Pengambilan Sumpah Jabatan, Pelantikan dan Serah Terima Jabatan Ketua Pengadilan Negeri Painan dari Bpk. FAUZI ISRA, SH.MH ke Bpk, MUHAMMAD FAUZAN HARYADI.SH.MH di PT Padang </h1></a>
+ <hr>
+      </div>
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <a href="blog/Perpisahan-dan-Pelepasan-Tugas/index.html"><h1>Perpisahan dan Pelepasan Tugas Bpk FAUZI ISRA. SH.MH Dari Ketua PN Painan Ke Ketua PN Koto Baru </h1></a>
+ <hr>
+      </div>
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <a href="blog/penyelenggaraan-upacara-Peringatan-Hari-Sumpah-Pemuda-Ke-91-Tahun-2019/index.html"><h1>Penyelenggaraan Upacara Peringatan Hari Sumpah Pemuda Ke-91 Tahun 2019 </h1></a>
+ <hr>
+      </div>
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <a href="blog/Upacara-Memperingati-Hari-Kesaktian-Pancasila-01-Oktober-2019/index.html"><h1>Upacara Memperingati Hari Kesaktian Pancasila 01 Oktober 2019 </h1></a> <hr>
+      </div>
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <a href="blog/Dirgahayu74/index.html"><h1>Dirgahayu MA RI Ke 74 </h1></a> <hr>
+      </div>
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <a href="blog/Kegiatan-Memeriahkan-Hut-RI-Ke-74/index.html"><h1>Kegiatan Memeriahkan Hut RI Ke 74 </h1></a> <hr>
+      </div>
+      <div class="berita-item" ondblclick="bisaDiEdit(this)" onblur="bisaDiBacaAja(this)">
+        <a href="blog/Upacara-17-Agustus-1945-Memperingati-Hut-RI-Ke-74/index.html"><h1>Upacara 17 Agustus 1945 Memperingati Hut RI Ke 74 </h1></a> <hr>
+      </div><br>
+
+        <a class="berita-hp" href="blog/kegiatan.html" style="margin-left:-270px;background:red;color:#fff;padding:20px;">Kegiatan lainnya..</a>
+      <a class="berita-lainnya" href="blog/kegiatan.html" style="background:red;color:#fff;padding:20px;">Kegiatan Lainnya..</a>
+
+      </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Hubungi Kami</h3>
+                        </div>
+                        <p>Silakan Hubungi Pengadilan Negeri Painan. Kami akan melayani para pencari keadilan dengan sepenuh hati.</p>
+                        <p>Kunjungi kami di Jalan Jenderal Sudirman Salido No. 158 Painan</p>
+                        <P><i class="fa fa-envelope"></i> Kirim email ke painan_pn@yahoo.com
+                            <br>
+                            <i class="fa fa-phone"></i>Telp/Fax (0756) 465215/(0756) 465216</P>
+                    </div>
+                    <!-- end clearfix -->
+                </div>
+                <!-- end col -->
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Artikel</h3>
+                        </div>
+                        <ul class="footer-links">
+                          <li> <q cite="">SISTEM KAMAR DALAM MAHKAMAH AGUNG : UPAYA MEMBANGUN KESATUAN HUKUM</q> Dr. RIDWAN MANSYUR, SH., MH </li><hr>
+                          <li> <q>
+KEADILAN RESTORATIF SEBAGAI TUJUAN PELAKSANAAN DIVERSI PADA SISTEM PERADILAN PIDANA ANAK</q> Dr. RIDWAN MANSYUR, SH., MH </li> <hr>
+                          <li> <q>
+PIMPINAN PENGADILAN SEMESTINYA ADALAH AGEN PERUBAHAN BAGI REFORMASI PERADILAN (AGENT of CHANGE for JUDICIAL REFORM)</q> Dr. RIDWAN MANSYUR, SH., MH </li> <hr>
+                          <li> <q>
+PERKEMBANGAN HUKUM LINGKUNGAN DI INDONESIA</q> PROF.Dr.TAKDIR RAHMADI, SH., LLM </li> <hr>
+                        </ul>
+                        <!-- end links -->
+                    </div>
+                    <!-- end clearfix -->
+                </div>
+                <!-- end col -->
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <!-- GTranslate: https://gtranslate.io/ -->
+                            <style type="text/css">
+                                < !-- #goog-gt-tt {
+                                    display: none !important;
+                                }
+
+                                .goog-te-banner-frame {
+                                    display: none !important;
+                                }
+
+                                .goog-te-menu-value:hover {
+                                    text-decoration: none !important;
+                                }
+
+                                .goog-te-gadget-icon {
+                                    background-image: url(//gtranslate.net/flags/gt_logo_19x19.gif) !important;
+                                    background-position: 0 0 !important;
+                                }
+
+                                body {
+                                    top: 0 !important;
+                                }
+
+                                -->
+                            </style>
+                            <div id="google_translate_element"></div>
+                            <script type="text/javascript">
+                                function googleTranslateElementInit() {
+                                    new google.translate.TranslateElement({
+                                        pageLanguage: 'id',
+                                        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                                        autoDisplay: false,
+                                        includedLanguages: ''
+                                    }, 'google_translate_element');
+                                }
+                            </script>
+                            <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                        </div>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="https://info.flagcounter.com/ffqe"><img src="https://s11.flagcounter.com/count2/ffqe/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+                            </li>
+                            <li>
+                                <div id="date"></div>
+                            </li>
+                            <a href="http://www.pt-padang.go.id/">Pengadilan Tinggi padang</a>
+                            <br>
+                            <a href="https://mahkamahagung.go.id/id">Mahkamah Agung RI</a>
+                        </ul>
+                        <!-- end links -->
+                    </div>
+                    <!-- end clearfix -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </footer>
+    <!-- end footer -->
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-center">
+                    <p class="footer-company-name">All Rights Reserved. &copy; 2020 <a href="#">Pengadilan Negeri Painan</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end copyrights -->
+    <a href="https://wa.me/6281277060060" style="background-color: green" class="dmtop global-radius"><i class="fa fa-whatsapp"></i></a>
+
+    <div class="modal fade" id="ppskt" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">PERSYARATAN PERMINTAAN SURAT KETERANGAN TIDAK PERNAH DIHUKUM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <p>Persyaratannya sebagai berikut</p>
+                        <!-- wp:list -->
+                        <ul>
+                            <li><strong>Permohonan &amp; Surat Pernyataan Diri ( Blangko Tersedia )</strong></li>
+                            <li><strong>Photo Copy  KTP</strong></li>
+                            <li><strong>Pas Foto Warna (4x6) 2 lembar</strong></li>
+                            <li><strong>Photo Copy Ijazah Terakhir (dilegalisir)</strong></li>
+                            <li><strong>Photo Copy SKCK (dilegalisir)</strong></li>
+                            <li><strong>Materai Rp. 6000,00 (Enam Ribu Rupiah ) 2 Buah</strong></li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="prosedur-berperkara" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Prosedur Berperkara</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <!-- wp:list -->
+                        <ul>
+                            <li><a href="http://website.pn-painan.go.id/index.php?id=130:prosedur-perkara-perdata-gugatan&amp;catid=27">PROSEDUR PERKARA PERDATA GUGATAN</a></li>
+                            <li><a href="http://website.pn-painan.go.id/index.php?id=168:prosedur-perkara-perdata-permohonan&amp;catid=27">PROSEDUR PERKARA PERDATA PERMOHONAN</a></li>
+                            <li><a href="http://website.pn-painan.go.id/index.php?id=169:prosedur-perkara-pidana-biasa&amp;catid=27">PROSEDUR PERKARA PIDANA BIASA</a></li>
+                            <li><a href="http://website.pn-painan.go.id/index.php?id=170:prosedur-perkara-pidana-banding-2&amp;catid=27">PROSEDUR PERKARA PIDANA BANDING</a></li>
+                        </ul>
+                        <!-- /wp:list -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="so" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Struktur Organisasi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: left">
+                        <img src="images/struktur.jpg" style="width:450px;height:450px" alt="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+    <script src="js/timeline.min.js"></script>
+    <script>
+        timeline(document.querySelectorAll('.timeline'), {
+            forceVerticalMode: 700,
+            mode: 'horizontal',
+            verticalStartPosition: 'left',
+            visibleItems: 4
+        });
+    </script>
+    <script src="https://use.fontawesome.com/496cd4667e.js"></script>
+    <script type="text/javascript">
+        // Show todays date
+        const dateElement = document.getElementById("date");
+        const options = {
+            year: "numeric",
+            weekday: "long",
+            month: "short",
+            day: "numeric"
+        };
+        const today = new Date();
+
+        dateElement.innerHTML = today.toLocaleDateString("id-ID", options);
+    </script>
+</body>
+
+</html>
