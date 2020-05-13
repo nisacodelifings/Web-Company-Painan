@@ -1,8 +1,4 @@
-### Source code
-[WEB](https://github.com/nscdlg/pn-painan "website") |
-[WEBVIEW](https://github.com/nscdlg/webview-pnpainan "webview")
-
-### hint
+# hint
 Gunakan ctrl+f untuk mencari kode dibawah ini pada text editor anda
 
 # (+) berita utama: carousel
